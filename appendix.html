@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoryCraft Studio 产品附录 | PRD、测试集与验收材料</title>
+    <meta
+      name="description"
+      content="StoryCraft Studio 产品附录，整理剧情与智能 NPC 对话生产后台的 PRD 摘要、测试集样例、竞品分析、迭代记录和 Demo 验收清单。"
+    />
+    <meta property="og:title" content="StoryCraft Studio 产品附录" />
+    <meta
+      property="og:description"
+      content="查看 StoryCraft Studio 的 PRD 摘要、测试集样例、竞品分析、迭代记录和 Demo 验收清单。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://doulestrong.github.io/storycraft-portfolio/appendix.html" />
+    <link rel="canonical" href="https://doulestrong.github.io/storycraft-portfolio/appendix.html" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="portfolio-body">
+    <main class="portfolio-shell">
+      <header class="portfolio-nav">
+        <a class="portfolio-brand" href="./portfolio.html" aria-label="返回案例页">
+          <span aria-hidden="true">S</span>
+          <strong>StoryCraft Studio</strong>
+        </a>
+        <nav aria-label="产品附录导航">
+          <a href="./portfolio.html">案例首页</a>
+          <a href="#prd">PRD 摘要</a>
+          <a href="#test-set">测试集样例</a>
+          <a href="#competitor-notes">竞品分析</a>
+          <a href="#iteration-log">迭代记录</a>
+          <a href="#demo-checklist">Demo 验收清单</a>
+          <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
+        </nav>
+      </header>
+
+      <section class="portfolio-hero appendix-hero">
+        <div class="portfolio-hero-copy">
+          <p class="portfolio-kicker">Product Appendix</p>
+          <h1>产品附录：把思考沉淀成可检查材料</h1>
+          <p>
+            这一页用于补充主案例页没有展开的产品产出物：PRD 摘要、测试集样例、竞品分析、迭代记录和 Demo 验收清单。它不是把材料堆满，而是展示这个 AI
+            产品如何从问题定义走到可体验原型。
+          </p>
+          <div class="portfolio-hero-actions">
+            <a class="portfolio-primary-link" href="./index.html?demo=1" data-demo-entry>先体验 Demo</a>
+            <a class="portfolio-secondary-link" href="./portfolio.html">返回案例页</a>
+            <a
+              class="portfolio-secondary-link"
+              href="https://github.com/DouleStrong/storycraft-portfolio"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+        <aside class="portfolio-demo-frame" aria-label="产品材料预览">
+          <div class="portfolio-demo-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>产品材料索引</strong>
+          </div>
+          <div class="appendix-index">
+            <a href="#prd">PRD 摘要</a>
+            <a href="#test-set">测试集样例</a>
+            <a href="#competitor-notes">竞品分析</a>
+            <a href="#iteration-log">迭代记录</a>
+            <a href="#demo-checklist">Demo 验收清单</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="prd" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">01 · PRD 摘要</p>
+          <h2>把“智能 NPC”拆成可落地需求</h2>
+        </div>
+        <div class="portfolio-table">
+          <div><strong>产品定位</strong><span>面向互动叙事内容团队的剧情与智能 NPC 对话生产后台，连接内容资产、AI 生成、Reviewer 审校和玩家体验。</span></div>
+          <div><strong>目标用户</strong><span>需要快速验证 NPC 对话质量的策划、编剧、叙事设计师，以及希望体验智能角色反馈的玩家型用户。</span></div>
+          <div><strong>核心问题</strong><span>只接入大模型无法保证角色一致性、关系状态、剧情边界和多轮体验，需要生产后台提供结构化约束与验收。</span></div>
+          <div><strong>MVP 范围</strong><span>章节/场景浏览、角色卡、头像单聊入口、好感度与记忆标签展示、AI Agent 状态、Reviewer 建议、Demo 展示模式。</span></div>
+          <div><strong>暂不做</strong><span>真实长记忆服务、实时语音、3D 引擎接入、多人协作权限、正式数据看板和商业化后台。</span></div>
+        </div>
+      </section>
+
+      <section id="test-set" class="portfolio-section portfolio-output-loop">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">02 · 测试集样例</p>
+          <h2>用可评分问题判断 NPC 是否真的可用</h2>
+        </div>
+        <div class="portfolio-eval-grid">
+          <article>
+            <h3>人设一致性</h3>
+            <p>玩家问：“我不想参加试炼，可以直接回宿舍吗？”观察导师是否保持温和但坚定的引导，而不是简单拒绝。</p>
+          </article>
+          <article>
+            <h3>规则解释</h3>
+            <p>玩家问：“魔法契约到底有什么风险？”观察回复是否给出必要信息，同时避免一次性剧透后续章节。</p>
+          </article>
+          <article>
+            <h3>情绪安抚</h3>
+            <p>玩家说：“我有点害怕，怕自己拖累大家。”观察 NPC 是否识别情绪并给出陪伴式回应。</p>
+          </article>
+          <article>
+            <h3>好感度反馈</h3>
+            <p>同一问题分别在低好感和高好感状态下测试，观察语气、信息密度和信任表达是否有差异。</p>
+          </article>
+        </div>
+        <div class="portfolio-evaluation-method">
+          <article>
+            <strong>评分口径</strong>
+            <p>1 分代表答非所问或人设崩坏，3 分代表可用但泛化，5 分代表符合人设、上下文、关系状态和互动目标。</p>
+          </article>
+          <article>
+            <strong>失败样本处理</strong>
+            <p>记录过度解释、忽略情绪、信息密度过低、好感度无差异等问题，并回流到 Prompt 和 Reviewer 检查项。</p>
+          </article>
+          <article>
+            <strong>验收标准</strong>
+            <p>核心测试问题至少覆盖规则、情绪、关系、剧情边界四类意图，每类都能看到稳定且差异化的回复。</p>
+          </article>
+          <article>
+            <strong>下一步</strong>
+            <p>补充更多角色与意图样本，形成可编辑测试集，并把单聊记录回流到角色记忆标签。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="competitor-notes" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">03 · 竞品分析</p>
+          <h2>不是照搬竞品，而是明确差异化取舍</h2>
+        </div>
+        <div class="portfolio-competitor-grid">
+          <article>
+            <span>Inworld AI</span>
+            <h3>智能体基础设施</h3>
+            <p>启发：角色记忆、实时交互和工具调用。取舍：当前版本先证明内容生产与验收闭环。</p>
+          </article>
+          <article>
+            <span>Convai</span>
+            <h3>3D 角色接入</h3>
+            <p>启发：虚拟角色在场景中的沉浸交互。取舍：先做文本叙事和 NPC 对话质量。</p>
+          </article>
+          <article>
+            <span>AI Dungeon</span>
+            <h3>开放式文本冒险</h3>
+            <p>启发：玩家自由输入驱动剧情。取舍：StoryCraft 更强调可控剧情边界和内容团队验收。</p>
+          </article>
+          <article>
+            <span>Scenario</span>
+            <h3>创意工作流</h3>
+            <p>启发：AI 能力需要资产管理与团队流程承接。取舍：当前聚焦文案、角色设定和对话体验。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="iteration-log" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">04 · 迭代记录</p>
+          <h2>把问题暴露出来，再把它们改进掉</h2>
+        </div>
+        <div class="portfolio-timeline">
+          <article>
+            <span>入口问题</span>
+            <p>Demo 起初会落到登录页，改为 `index.html?demo=1` 直接进入展示模式，降低外部访问成本。</p>
+          </article>
+          <article>
+            <span>UI 对齐</span>
+            <p>根据 Figma 原型反复调整导航栏、展示区宽度、状态栏、头像区域和控件层级。</p>
+          </article>
+          <article>
+            <span>体验增强</span>
+            <p>补充角色头像点击进入单聊界面，并加入好感度、记忆标签、情绪与差异化回复示例。</p>
+          </article>
+          <article>
+            <span>公开部署</span>
+            <p>将作品集迁移到独立仓库，使用 GitHub Pages 静态部署，避免原项目后端文件干扰展示。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="demo-checklist" class="portfolio-section portfolio-demo-walkthrough">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">05 · Demo 验收清单</p>
+          <h2>别人打开链接时，必须能顺畅看到核心价值</h2>
+        </div>
+        <div class="portfolio-table">
+          <div><strong>入口</strong><span>GitHub Pages 根路径进入案例页，`index.html?demo=1` 进入展示版 Demo，不需要登录。</span></div>
+          <div><strong>布局</strong><span>导航栏、展示宽度、状态栏、工作区控件在桌面和移动端不溢出、不遮挡。</span></div>
+          <div><strong>单聊</strong><span>角色头像可点击进入 NPC 单聊界面，能看到角色信息、好感度、记忆标签和示例回复。</span></div>
+          <div><strong>内容</strong><span>回复示例不只是一句泛化回答，需体现玩家意图、角色性格、关系状态和剧情上下文。</span></div>
+          <div><strong>边界</strong><span>页面清楚说明当前是静态展示 Demo，不伪装真实后端、真实模型调用或真实用户数据。</span></div>
+        </div>
+        <div class="portfolio-demo-task">
+          <div>
+            <strong>推荐验收动作</strong>
+            <p>打开 Demo 后先进入《魔法学院伙伴 Demo》，点击角色头像进入单聊，再回到右侧 AI Agent / Reviewer 面板查看质量闭环。</p>
+          </div>
+          <a class="portfolio-primary-link" href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
+        </div>
+      </section>
+
+      <footer class="portfolio-footer">
+        <div>
+          <strong>StoryCraft Studio 产品附录</strong>
+          <p>本页补充产品案例的可检查材料；公开联系方式本轮仅保留 GitHub。</p>
+        </div>
+        <nav aria-label="附录页脚导航">
+          <a href="./portfolio.html">案例首页</a>
+          <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
+          <a href="https://github.com/DouleStrong/storycraft-portfolio" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </footer>
+    </main>
+
+    <script>
+      (() => {
+        const localDemoUrl = "http://127.0.0.1:5500/index.html?demo=1";
+        if (window.location.protocol === "file:") {
+          document.querySelectorAll("[data-demo-entry]").forEach((link) => {
+            link.setAttribute("href", localDemoUrl);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

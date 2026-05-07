@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StoryCraft Studio | AI 原生互动叙事产品案例</title>
+    <title>StoryCraft Studio | 剧情与智能 NPC 对话生产后台产品案例</title>
+    <meta name="description" content="StoryCraft Studio 是一个面向互动叙事内容生产的 AI 产品案例，展示剧情生产后台、智能 NPC 单聊、AI Reviewer、测试集与产品迭代思考。" />
+    <meta property="og:title" content="StoryCraft Studio | 剧情与智能 NPC 对话生产后台产品案例" />
+    <meta
+      property="og:description"
+      content="从产品动机、竞品观察、PRD 拆解、Demo 验收和测试集样例，完整展示一个智能 NPC 体验闭环。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://doulestrong.github.io/storycraft-portfolio/portfolio.html" />
+    <link rel="canonical" href="https://doulestrong.github.io/storycraft-portfolio/portfolio.html" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="portfolio-body">
@@ -14,13 +23,13 @@
           <strong>StoryCraft Studio</strong>
         </a>
         <nav aria-label="案例页导航">
+          <a href="#project-summary">项目摘要</a>
           <a href="#demo-walkthrough">项目演示</a>
           <a href="#output-loop">证据链</a>
-          <a href="#background">产品动机</a>
-          <a href="#innovation">创新点</a>
-          <a href="#competitors">竞品观察</a>
+          <a href="#delivery-method">推进方式</a>
           <a href="#product-definition">产品定义</a>
-          <a href="#evaluation">测试集</a>
+          <a href="#results-boundary">成果与限制</a>
+          <a href="./appendix.html">产品附录</a>
           <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
         </nav>
       </header>
@@ -36,6 +45,14 @@
           <div class="portfolio-hero-actions">
             <a class="portfolio-primary-link" href="./index.html?demo=1" data-demo-entry>体验智能 NPC 对话 Demo</a>
             <a class="portfolio-secondary-link" href="#competitors">查看产品思考</a>
+            <a
+              class="portfolio-secondary-link"
+              href="https://github.com/DouleStrong/storycraft-portfolio"
+              target="_blank"
+              rel="noreferrer"
+            >
+              查看 GitHub
+            </a>
           </div>
           <p class="portfolio-local-demo-hint" data-local-demo-hint>
             本地预览时，请先在 frontend 目录运行 <code>python -m http.server 5500</code>，再打开
@@ -87,6 +104,43 @@
         </article>
       </section>
 
+      <section id="project-summary" class="portfolio-section portfolio-summary-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">Project Summary</p>
+          <h2>项目摘要：30 秒读懂这个产品案例</h2>
+        </div>
+        <div class="portfolio-summary-grid">
+          <article>
+            <span>面向谁</span>
+            <strong>互动叙事内容团队</strong>
+            <p>面向需要管理世界观、章节、角色和 NPC 对话的内容生产者，而不是只面向单个玩家的泛聊天工具。</p>
+          </article>
+          <article>
+            <span>解决什么</span>
+            <strong>智能 NPC 难以生产和验收</strong>
+            <p>当 NPC 需要记忆、情绪、好感度和剧情边界时，团队需要一个可追踪、可审校、可测试的生产后台。</p>
+          </article>
+          <article>
+            <span>核心创新</span>
+            <strong>后台生产 + 单聊体验 + Reviewer</strong>
+            <p>把内容生产、角色体验和质量验收放在同一条链路里，用 Demo 证明产品闭环，而不是只展示概念。</p>
+          </article>
+          <article>
+            <span>当前阶段</span>
+            <strong>GitHub Pages 静态展示版</strong>
+            <p>当前版本可直接在线体验核心路径，不依赖后端、数据库或本地环境，适合快速理解产品判断。</p>
+          </article>
+        </div>
+        <div class="portfolio-reading-path">
+          <strong>推荐阅读路径</strong>
+          <p>先体验 Demo，再看产品动机与竞品观察，最后进入产品附录查看 PRD 摘要、测试集样例、迭代记录和 Demo 验收清单。</p>
+          <div class="portfolio-hero-actions">
+            <a class="portfolio-primary-link" href="./index.html?demo=1" data-demo-entry>进入 Demo</a>
+            <a class="portfolio-secondary-link" href="./appendix.html">查看产品附录</a>
+          </div>
+        </div>
+      </section>
+
       <section id="demo-walkthrough" class="portfolio-section portfolio-demo-walkthrough">
         <div class="portfolio-section-head">
           <p class="portfolio-kicker">Demo Walkthrough</p>
@@ -125,7 +179,7 @@
 
       <section id="output-loop" class="portfolio-section portfolio-output-loop">
         <div class="portfolio-section-head">
-          <p class="portfolio-kicker">AI PM Evidence Loop</p>
+          <p class="portfolio-kicker">Product Evidence Loop</p>
           <h2>闭环输出：不是功能陈列，而是把 Why / How / Evaluation 讲完整</h2>
         </div>
         <div class="portfolio-loop-grid">
@@ -163,6 +217,42 @@
             <p>把回复单一、头像遮挡、Demo 入口落到登录页、Figma 宽度不齐等问题记录为迭代证据，体现推进落地的过程。</p>
           </article>
         </div>
+      </section>
+
+      <section id="delivery-method" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">Product Delivery</p>
+          <h2>项目推进方式：把独立想法推进成可体验产品</h2>
+        </div>
+        <div class="portfolio-delivery-grid">
+          <article>
+            <strong>需求定义</strong>
+            <p>从“智能 NPC 有趣”收敛为可执行问题：内容团队如何低成本验证 NPC 的人设、记忆、关系反馈和剧情边界。</p>
+          </article>
+          <article>
+            <strong>竞品观察</strong>
+            <p>拆解 Inworld、Convai、AI Dungeon、Scenario 的能力侧重，确定 StoryCraft 更偏生产后台和质量验收。</p>
+          </article>
+          <article>
+            <strong>PRD 拆解</strong>
+            <p>将需求拆成后台信息架构、角色卡、单聊入口、AI Agent、Reviewer、测试集和 Demo 验收标准。</p>
+          </article>
+          <article>
+            <strong>原型与 UI</strong>
+            <p>参考 Figma 原型调整导航、工作区宽度、角色头像、状态栏和聊天页布局，让展示版更接近真实工具。</p>
+          </article>
+          <article>
+            <strong>Demo 改造</strong>
+            <p>将原有 StoryCraft Studio 改造成静态可访问 Demo，入口直达展示模式，避免别人打开后停在登录页。</p>
+          </article>
+          <article>
+            <strong>测试与复盘</strong>
+            <p>用测试集、验收清单和迭代记录沉淀问题，持续修正回复单一、头像遮挡、宽度不齐等体验细节。</p>
+          </article>
+        </div>
+        <p class="portfolio-review-copy">
+          这个项目由我独立推进，重点不只是“做出了页面”，而是把产品假设、交互原型、AI 能力边界、测试方式和发布链路串成一个可以被复盘的产品过程。
+        </p>
       </section>
 
       <section id="background" class="portfolio-section">
@@ -389,6 +479,35 @@
         </div>
       </section>
 
+      <section id="results-boundary" class="portfolio-section portfolio-output-loop">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">Result & Boundary</p>
+          <h2>成果与限制：用可体验链路证明判断，不伪造上线数据</h2>
+        </div>
+        <div class="portfolio-delivery-grid">
+          <article>
+            <strong>可验证成果</strong>
+            <p>站点根路径可直接打开主案例页，Demo 链接可进入智能 NPC 展示模式，附录页承接 PRD、测试集和验收材料。</p>
+          </article>
+          <article>
+            <strong>产品证据</strong>
+            <p>页面保留了产品动机、竞品差异、需求拆解、AI 工作流、测试维度和迭代记录，便于判断产品思考是否完整。</p>
+          </article>
+          <article>
+            <strong>当前限制</strong>
+            <p>当前是静态展示 Demo，不声明真实用户数据、线上留存、实时模型调用、长记忆服务或多人协作后台已经上线。</p>
+          </article>
+        </div>
+        <div class="portfolio-reading-path">
+          <strong>为什么这样展示</strong>
+          <p>对 AI 产品来说，早期作品最重要的是把问题定义、可体验原型、评测方法和边界意识讲清楚。当前版本优先证明“智能 NPC 生产闭环”成立，再把真实模型接入、数据看板和多人协作放入后续路线。</p>
+          <div class="portfolio-hero-actions">
+            <a class="portfolio-secondary-link" href="./appendix.html">查看附录中的验收材料</a>
+            <a class="portfolio-secondary-link" href="https://github.com/DouleStrong/storycraft-portfolio" target="_blank" rel="noreferrer">查看 GitHub 仓库</a>
+          </div>
+        </div>
+      </section>
+
       <section id="review" class="portfolio-section">
         <div class="portfolio-section-head">
           <p class="portfolio-kicker">10 · 产品复盘</p>
@@ -399,6 +518,18 @@
           的产品价值在于把 AI 生成能力放进可控工作流里：前台让用户感知角色，后台让创作者管理内容，评测集让团队判断 AI 是否真的能用于互动叙事。
         </p>
       </section>
+
+      <footer class="portfolio-footer">
+        <div>
+          <strong>StoryCraft Studio</strong>
+          <p>剧情与智能 NPC 对话生产后台产品案例。公开联系方式本轮仅保留 GitHub。</p>
+        </div>
+        <nav aria-label="作品集页脚导航">
+          <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
+          <a href="./appendix.html">产品附录</a>
+          <a href="https://github.com/DouleStrong/storycraft-portfolio" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </footer>
     </main>
     <script>
       (() => {
