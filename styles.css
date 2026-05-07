@@ -3619,6 +3619,10 @@ body[data-demo-mode="true"] {
   color: #111827;
 }
 
+.prd-requirement-table div {
+  grid-template-columns: 190px minmax(0, 1fr);
+}
+
 .portfolio-eval-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }

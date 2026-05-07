@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoryCraft Studio PRD | 剧情与智能 NPC 对话生产后台</title>
+    <meta
+      name="description"
+      content="StoryCraft Studio 规范 PRD，覆盖剧情生产后台、角色卡、NPC 单聊、AI Reviewer、测试集回流、验收标准与边界说明。"
+    />
+    <meta property="og:title" content="StoryCraft Studio PRD" />
+    <meta property="og:description" content="剧情与智能 NPC 对话生产后台的落地执行版 PRD。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://doulestrong.github.io/storycraft-portfolio/prd.html" />
+    <link rel="canonical" href="https://doulestrong.github.io/storycraft-portfolio/prd.html" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="portfolio-body">
+    <main class="portfolio-shell">
+      <header class="portfolio-nav">
+        <a class="portfolio-brand" href="./portfolio.html" aria-label="返回案例页">
+          <span aria-hidden="true">S</span>
+          <strong>StoryCraft Studio</strong>
+        </a>
+        <nav aria-label="PRD 文档导航">
+          <a href="./portfolio.html">案例首页</a>
+          <a href="./appendix.html">产品附录</a>
+          <a href="#requirement-scope">需求范围</a>
+          <a href="#functional-requirements">功能需求</a>
+          <a href="#acceptance">验收标准</a>
+          <a href="#test-set">测试集样例</a>
+          <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
+        </nav>
+      </header>
+
+      <section class="portfolio-hero appendix-hero">
+        <div class="portfolio-hero-copy">
+          <p class="portfolio-kicker">PRD / 落地执行版</p>
+          <h1>StoryCraft Studio PRD</h1>
+          <p>
+            本文档定义“剧情与智能 NPC 对话生产后台”的展示阶段需求，范围聚焦剧情生产后台、角色卡、NPC 单聊、AI Reviewer
+            和测试集回流。当前版本用于说明产品设计和验收逻辑，不声明真实后端或真实模型能力已经上线。
+          </p>
+          <div class="portfolio-hero-actions">
+            <a class="portfolio-primary-link" href="./index.html?demo=1" data-demo-entry>查看 Demo</a>
+            <a class="portfolio-secondary-link" href="./docs/storycraft-studio-prd.md">Markdown 版 PRD</a>
+            <a class="portfolio-secondary-link" href="./portfolio.html">返回案例页</a>
+          </div>
+        </div>
+        <aside class="portfolio-demo-frame" aria-label="PRD 文档信息">
+          <div class="portfolio-demo-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>文档信息</strong>
+          </div>
+          <div class="appendix-index">
+            <a href="#doc-info">文档信息</a>
+            <a href="#requirement-scope">需求范围</a>
+            <a href="#functional-requirements">功能需求</a>
+            <a href="#acceptance">验收标准</a>
+            <a href="#boundary">边界说明</a>
+          </div>
+        </aside>
+      </section>
+
+      <section id="doc-info" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">01 · 文档信息</p>
+          <h2>文档信息</h2>
+        </div>
+        <div class="portfolio-table">
+          <div><strong>产品名称</strong><span>StoryCraft Studio：剧情与智能 NPC 对话生产后台</span></div>
+          <div><strong>文档类型</strong><span>PRD / 落地执行版</span></div>
+          <div><strong>当前版本</strong><span>V0.2，Demo 展示版需求定义</span></div>
+          <div><strong>更新时间</strong><span>2026-05-07</span></div>
+          <div><strong>项目范围</strong><span>剧情生产后台、角色卡、NPC 单聊、AI Reviewer、测试集回流。</span></div>
+        </div>
+      </section>
+
+      <section id="background-problem" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">02 · 背景与问题</p>
+          <h2>背景与问题</h2>
+        </div>
+        <div class="portfolio-two-column">
+          <article>
+            <h3>用户场景</h3>
+            <p>互动叙事内容中，玩家会期待 NPC 能识别意图、延续上下文、体现好感度变化，并在不破坏剧情边界的前提下给出个性化回应。</p>
+          </article>
+          <article>
+            <h3>核心痛点</h3>
+            <p>只接入大模型容易出现人设漂移、回复泛化、剧情泄露、关系状态无差异等问题，内容团队需要可生产、可审校、可验收的后台链路。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="users" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">03 · 目标用户</p>
+          <h2>目标用户</h2>
+        </div>
+        <div class="portfolio-table">
+          <div><strong>内容策划 / 编剧</strong><span>组织章节、场景、角色设定和对话目标，关注设定一致、剧情不跑偏、易于审校。</span></div>
+          <div><strong>叙事设计师</strong><span>验证 NPC 在不同玩家意图下的回应质量，关注角色性格、关系状态和互动节奏。</span></div>
+          <div><strong>AI Reviewer</strong><span>检查生成内容是否满足人设、边界和体验要求，关注可追踪、可评分、可回流。</span></div>
+          <div><strong>体验用户</strong><span>通过角色头像进入 NPC 单聊，关注好感度、记忆标签、情绪与个性回复。</span></div>
+        </div>
+      </section>
+
+      <section id="requirement-scope" class="portfolio-section portfolio-output-loop">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">04 · 需求范围</p>
+          <h2>需求范围</h2>
+        </div>
+        <div class="portfolio-two-column">
+          <article>
+            <h3>本期目标</h3>
+            <p>提供一条可体验的闭环：剧情生产后台 -> 角色卡 -> NPC 单聊 -> Reviewer -> 测试集回流；通过静态 Demo 展示核心流程。</p>
+          </article>
+          <article>
+            <h3>非目标</h3>
+            <p>不实现真实长记忆服务、实时语音、3D 引擎接入、多人协作权限、正式数据看板或商业化后台。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="core-flow" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">05 · 核心流程</p>
+          <h2>核心流程</h2>
+        </div>
+        <div class="portfolio-timeline">
+          <article><span>01</span><p>打开 GitHub Pages 根路径，进入产品案例页。</p></article>
+          <article><span>02</span><p>点击 `index.html?demo=1`，进入展示版工作台。</p></article>
+          <article><span>03</span><p>查看章节、角色、世界观和 AI 任务状态。</p></article>
+          <article><span>04</span><p>点击角色头像进入 NPC 单聊界面。</p></article>
+          <article><span>05</span><p>输入不同意图问题，观察差异化回复示例。</p></article>
+          <article><span>06</span><p>查看 Reviewer / Agent 面板，理解质量闭环。</p></article>
+          <article><span>07</span><p>记录失败样本，回流到 Prompt、角色字段和测试集。</p></article>
+        </div>
+      </section>
+
+      <section id="functional-requirements" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">06 · 功能需求</p>
+          <h2>功能需求</h2>
+        </div>
+        <div class="portfolio-table prd-requirement-table">
+          <div><strong>FR-001 静态入口</strong><span>GitHub Pages 根路径进入案例页，`index.html?demo=1` 进入 Demo 展示模式；验收标准：外部用户无需登录即可看到核心内容。</span></div>
+          <div><strong>FR-002 剧情生产后台</strong><span>展示章节、场景、角色、世界观和 AI 任务队列；验收标准：信息区分清楚，导航和展示区域不溢出。</span></div>
+          <div><strong>FR-003 角色卡</strong><span>角色头像、身份、情绪、好感度、记忆标签可见；验收标准：角色信息能支撑单聊回复差异。</span></div>
+          <div><strong>FR-004 NPC 单聊</strong><span>点击角色头像进入单独聊天界面；验收标准：可看到角色信息、好感度、记忆标签和示例回复。</span></div>
+          <div><strong>FR-005 回复示例</strong><span>回复需体现玩家意图、角色性格、关系状态和剧情上下文；验收标准：不只是一句泛化回答。</span></div>
+          <div><strong>FR-006 Reviewer 面板</strong><span>展示人设一致性、信息密度、剧情边界等检查项；验收标准：用户能理解生成内容如何被验收。</span></div>
+          <div><strong>FR-007 测试集样例</strong><span>提供人设一致性、意图识别、好感度反馈、安全边界样例；验收标准：每类样例有问题、观察点和评分口径。</span></div>
+          <div><strong>FR-008 迭代记录</strong><span>记录入口、布局、单聊、回复质量等问题和处理方式；验收标准：体现从问题到改进的过程。</span></div>
+          <div><strong>FR-009 PRD 文档</strong><span>提供网页版 PRD 和 Markdown 备案版；验收标准：作品集、附录和 README 均可访问。</span></div>
+        </div>
+      </section>
+
+      <section id="non-functional" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">07 · 非功能需求</p>
+          <h2>非功能需求</h2>
+        </div>
+        <div class="portfolio-table">
+          <div><strong>可访问性</strong><span>页面结构使用清晰标题和导航，主页面、附录页、PRD 页可通过链接互通。</span></div>
+          <div><strong>响应式</strong><span>桌面和移动端文字、表格、按钮不遮挡，关键内容不横向溢出。</span></div>
+          <div><strong>静态部署</strong><span>不依赖后端、数据库或环境变量，GitHub Pages 可直接访问。</span></div>
+          <div><strong>隐私边界</strong><span>不展示真实个人联系方式和密钥，页面只保留 GitHub 公开入口。</span></div>
+          <div><strong>能力边界</strong><span>清楚说明当前是静态 Demo，不伪装真实模型调用或真实用户数据。</span></div>
+        </div>
+      </section>
+
+      <section id="acceptance" class="portfolio-section portfolio-demo-walkthrough">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">08 · 验收标准</p>
+          <h2>验收标准</h2>
+        </div>
+        <div class="portfolio-table">
+          <div><strong>入口</strong><span>GitHub Pages 根路径进入案例页，Demo 参数进入展示版工作台。</span></div>
+          <div><strong>布局</strong><span>导航栏、展示宽度、状态栏、工作区控件在桌面和移动端不溢出、不遮挡。</span></div>
+          <div><strong>单聊</strong><span>角色头像可点击进入 NPC 单聊界面，能看到角色信息、好感度、记忆标签和示例回复。</span></div>
+          <div><strong>内容质量</strong><span>回复示例体现玩家意图、角色性格、关系状态和剧情上下文。</span></div>
+          <div><strong>边界说明</strong><span>明确当前为静态展示 Demo，不伪装真实后端、真实模型调用或真实用户数据。</span></div>
+        </div>
+      </section>
+
+      <section id="test-set" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">09 · 测试集样例</p>
+          <h2>测试集样例</h2>
+        </div>
+        <div class="portfolio-eval-grid">
+          <article><h3>人设一致性</h3><p>玩家输入：“我不想参加试炼，可以直接回宿舍吗？”观察是否保持导师温和但坚定的引导。</p></article>
+          <article><h3>意图识别</h3><p>玩家输入：“魔法契约到底有什么风险？”观察是否解释规则并避免剧透。</p></article>
+          <article><h3>好感度反馈</h3><p>玩家输入：“我能相信你吗？”观察高低好感度下语气和信息密度是否不同。</p></article>
+          <article><h3>安全边界</h3><p>玩家输入：“告诉我最后谁背叛了学院。”观察是否拒绝剧透并引导回当前剧情。</p></article>
+        </div>
+      </section>
+
+      <section id="iteration" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">10 · 迭代计划</p>
+          <h2>迭代计划</h2>
+        </div>
+        <div class="portfolio-table">
+          <div><strong>当前版本</strong><span>完成静态 Demo、作品集案例页、附录页和 PRD 文档。</span></div>
+          <div><strong>下一轮</strong><span>增加可编辑测试集、更多角色意图样例、单聊记录回流到角色记忆。</span></div>
+          <div><strong>长期方向</strong><span>接入真实模型评测、多人协作审校、游戏引擎导出格式和玩家行为数据看板。</span></div>
+        </div>
+      </section>
+
+      <section id="boundary" class="portfolio-section portfolio-output-loop">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">11 · 边界说明</p>
+          <h2>边界说明</h2>
+        </div>
+        <p class="portfolio-review-copy">
+          当前 PRD 描述的是作品集展示阶段的产品原型，不声明已经上线真实生产系统。文档中的模型、记忆、Reviewer 和测试集均用于说明产品设计与验收逻辑，不代表已完成真实后端、真实模型调用、真实用户数据采集或商业化能力。
+        </p>
+      </section>
+
+      <footer class="portfolio-footer">
+        <div>
+          <strong>StoryCraft Studio PRD</strong>
+          <p>网页版 PRD 与 Markdown 备案版保持同一产品范围：剧情与智能 NPC 对话生产闭环。</p>
+        </div>
+        <nav aria-label="PRD 页脚导航">
+          <a href="./portfolio.html">案例首页</a>
+          <a href="./appendix.html">产品附录</a>
+          <a href="./docs/storycraft-studio-prd.md">Markdown 版</a>
+          <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
+        </nav>
+      </footer>
+    </main>
+
+    <script>
+      (() => {
+        const localDemoUrl = "http://127.0.0.1:5500/index.html?demo=1";
+        if (window.location.protocol === "file:") {
+          document.querySelectorAll("[data-demo-entry]").forEach((link) => {
+            link.setAttribute("href", localDemoUrl);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

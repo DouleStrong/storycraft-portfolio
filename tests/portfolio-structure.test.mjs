@@ -69,3 +69,41 @@ test("case pages use restrained PRD-style language instead of promotional headli
   assert.match(styles, /--portfolio-heading/);
   assert.match(styles, /\.portfolio-doc-note/);
 });
+
+test("formal PRD exists in web and markdown formats with execution-level sections", () => {
+  assert.equal(existsSync(join(root, "prd.html")), true, "prd.html should exist");
+  assert.equal(existsSync(join(root, "docs", "storycraft-studio-prd.md")), true, "markdown PRD should exist");
+
+  const prdPage = read("prd.html");
+  const prdMarkdown = read("docs/storycraft-studio-prd.md");
+  const combined = `${prdPage}\n${prdMarkdown}`;
+
+  for (const pattern of [
+    /FR-001/,
+    /目标用户/,
+    /需求范围/,
+    /非目标/,
+    /验收标准/,
+    /测试集样例/,
+    /边界说明/,
+    /核心流程/,
+    /非功能需求/,
+    /迭代计划/,
+  ]) {
+    assert.match(combined, pattern);
+  }
+
+  assert.match(prdPage, /docs\/storycraft-studio-prd\.md/);
+  assert.match(prdPage, /index\.html\?demo=1/);
+});
+
+test("portfolio, appendix, and README link to the formal PRD", () => {
+  const portfolio = read("portfolio.html");
+  const appendix = read("appendix.html");
+  const readme = read("README.md");
+
+  assert.match(portfolio, /prd\.html/);
+  assert.match(appendix, /prd\.html/);
+  assert.match(readme, /prd\.html/);
+  assert.match(readme, /docs\/storycraft-studio-prd\.md/);
+});
