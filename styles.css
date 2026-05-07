@@ -3087,6 +3087,7 @@ body[data-demo-mode="true"] {
 }
 
 .portfolio-body {
+  --portfolio-heading: #243044;
   background: #f4f7ff;
 }
 
@@ -3218,10 +3219,11 @@ body[data-demo-mode="true"] {
 
 .portfolio-hero h1 {
   max-width: 620px;
-  color: #111827;
+  color: var(--portfolio-heading);
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
-  line-height: 1.08;
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  line-height: 1.18;
+  font-weight: 760;
 }
 
 .portfolio-hero p,
@@ -3418,6 +3420,7 @@ body[data-demo-mode="true"] {
   background: rgba(255, 255, 255, 0.88);
 }
 
+.portfolio-doc-note,
 .portfolio-reading-path {
   display: grid;
   gap: 10px;
@@ -3427,6 +3430,7 @@ body[data-demo-mode="true"] {
   background: #ffffff;
 }
 
+.portfolio-doc-note strong,
 .portfolio-reading-path strong {
   color: #111827;
 }
@@ -3559,9 +3563,11 @@ body[data-demo-mode="true"] {
 }
 
 .portfolio-section h2 {
-  color: #111827;
+  color: var(--portfolio-heading);
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-size: clamp(1.18rem, 2vw, 1.62rem);
+  line-height: 1.35;
+  font-weight: 760;
 }
 
 .portfolio-section h3 {

@@ -53,3 +53,19 @@ test("root page keeps portfolio redirect and demo boot behavior", () => {
   assert.match(index, /data-demo-protocol/);
   assert.match(index, /demo-boot-fallback/);
 });
+
+test("case pages use restrained PRD-style language instead of promotional headlines", () => {
+  const portfolio = read("portfolio.html");
+  const appendix = read("appendix.html");
+  const styles = read("styles.css");
+  const combined = `${portfolio}\n${appendix}`;
+
+  assert.doesNotMatch(combined, /30 秒读懂|必须能顺畅看到核心价值|把独立想法推进成可体验产品|用可体验链路证明判断/);
+  assert.match(combined, /项目概览/);
+  assert.match(combined, /需求范围/);
+  assert.match(combined, /验收标准/);
+  assert.match(combined, /边界说明/);
+  assert.match(combined, /验证方式/);
+  assert.match(styles, /--portfolio-heading/);
+  assert.match(styles, /\.portfolio-doc-note/);
+});
