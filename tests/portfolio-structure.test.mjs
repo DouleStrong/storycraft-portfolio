@@ -107,3 +107,33 @@ test("portfolio, appendix, and README link to the formal PRD", () => {
   assert.match(readme, /prd\.html/);
   assert.match(readme, /docs\/storycraft-studio-prd\.md/);
 });
+
+test("PRD acceptance criteria describe product outcomes, not portfolio implementation checks", () => {
+  const prdPage = read("prd.html");
+  const prdMarkdown = read("docs/storycraft-studio-prd.md");
+  const combined = `${prdPage}\n${prdMarkdown}`;
+
+  for (const pattern of [/内容生产效率/, /人设一致性/, /剧情边界/, /Reviewer 通过率/, /测试集回流/]) {
+    assert.match(combined, pattern);
+  }
+
+  const pageAcceptance = prdPage.slice(prdPage.indexOf('id="acceptance"'), prdPage.indexOf('id="test-set"'));
+  const markdownAcceptance = prdMarkdown.slice(prdMarkdown.indexOf("## 8. 验收标准"), prdMarkdown.indexOf("## 9. 测试集样例"));
+  const acceptanceOnly = `${pageAcceptance}\n${markdownAcceptance}`;
+
+  assert.doesNotMatch(acceptanceOnly, /GitHub Pages|index\.html\?demo=1|导航栏|展示宽度|状态栏|静态展示 Demo/);
+});
+
+test("PRD core flow describes the real content production workflow", () => {
+  const prdPage = read("prd.html");
+  const prdMarkdown = read("docs/storycraft-studio-prd.md");
+  const pageFlow = prdPage.slice(prdPage.indexOf('id="core-flow"'), prdPage.indexOf('id="functional-requirements"'));
+  const markdownFlow = prdMarkdown.slice(prdMarkdown.indexOf("## 5. 核心流程"), prdMarkdown.indexOf("## 6. 功能需求"));
+  const flowOnly = `${pageFlow}\n${markdownFlow}`;
+
+  for (const pattern of [/创建或选择叙事项目/, /维护角色卡/, /生成或编辑 NPC 对话/, /单聊验证/, /Reviewer 质检/, /失败样本回流/]) {
+    assert.match(flowOnly, pattern);
+  }
+
+  assert.doesNotMatch(flowOnly, /GitHub Pages|index\.html\?demo=1|展示版工作台/);
+});
