@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResearchFlowAgent | 研究型 AI Agent 工作流产品案例</title>
+    <meta
+      name="description"
+      content="ResearchFlowAgent 是一个面向科研文献调研的 AI Agent 工作流产品案例，展示任务理解、RAG 检索、人工审批、结构化报告输出和 benchmark 评测体系。"
+    />
+    <meta property="og:title" content="ResearchFlowAgent | 研究型 AI Agent 工作流产品案例" />
+    <meta
+      property="og:description"
+      content="从科研调研场景出发，拆解 AI Agent 工作流、人工审核、来源回溯、中断恢复和指标评估。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://doulestrong.github.io/storycraft-portfolio/researchflow.html" />
+    <link rel="canonical" href="https://doulestrong.github.io/storycraft-portfolio/researchflow.html" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="portfolio-body">
+    <main class="portfolio-shell">
+      <button class="portfolio-drawer-toggle" type="button" data-drawer-open aria-controls="portfolioDrawer" aria-expanded="false">目录</button>
+      <div class="portfolio-drawer-backdrop" data-drawer-close></div>
+      <aside id="portfolioDrawer" class="portfolio-sidebar portfolio-drawer" data-drawer-panel>
+          <a class="portfolio-brand" href="./portfolio.html" aria-label="返回作品集首页">
+            <span aria-hidden="true">R</span>
+            <strong>ResearchFlowAgent</strong>
+          </a>
+          <nav class="portfolio-sidebar-nav" aria-label="ResearchFlowAgent 侧边导航">
+            <a href="./portfolio.html">作品集总览</a>
+            <a href="#overview">项目概览</a>
+            <a href="#workflow">核心流程</a>
+            <a href="#mechanism">产品机制</a>
+            <a href="#evaluation">评测体系</a>
+            <a href="#results">成果与边界</a>
+            <a href="./researchflow-demo.html">体验 Demo</a>
+            <a href="https://github.com/DouleStrong/storycraft-portfolio" target="_blank" rel="noreferrer">GitHub</a>
+          </nav>
+          <a class="portfolio-back-link portfolio-sidebar-back-link" href="./portfolio.html">返回作品集</a>
+      </aside>
+
+      <header class="portfolio-nav">
+            <div>
+              <p class="portfolio-kicker">产品案例</p>
+              <strong>研究型 AI Agent 工作流</strong>
+            </div>
+            <a class="portfolio-secondary-link" href="./researchflow-demo.html">体验 Demo</a>
+      </header>
+
+      <section class="portfolio-hero appendix-hero">
+        <div class="portfolio-hero-copy">
+          <p class="portfolio-kicker">产品案例 / AI Agent 工作流</p>
+          <h1>ResearchFlowAgent：研究型 AI Agent 工作流产品</h1>
+          <p>
+            本案例围绕科研人员文献调研效率低、信息来源分散、AI 输出难以追溯的问题，拆解一个可审批、可恢复、可评测的研究型 Agent
+            工作流。核心链路为：任务理解 - 提纲规划 - 知识检索 - 人工审批 - 结构化报告输出。
+          </p>
+          <div class="portfolio-hero-actions">
+            <a class="portfolio-secondary-link" href="./researchflow-demo.html">体验 Demo</a>
+          </div>
+        </div>
+        <aside class="portfolio-demo-frame" aria-label="ResearchFlowAgent 工作流预览">
+          <div class="portfolio-demo-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>Research Agent Console</strong>
+          </div>
+          <div class="portfolio-demo-grid">
+            <div class="portfolio-demo-sidebar">
+              <b>任务</b>
+              <b>检索</b>
+              <b>审批</b>
+            </div>
+            <div class="portfolio-demo-main">
+              <span>文献调研任务 · 可追溯报告</span>
+              <strong>从开放问题到结构化研究报告</strong>
+              <p>系统将用户问题拆解为提纲与检索任务，保留来源证据，并在关键节点引入人工审批，降低 Agent 自动跑偏风险。</p>
+            </div>
+            <div class="portfolio-demo-agent">
+              <span>Agent 状态</span>
+              <p>检索完成</p>
+              <p>等待审批</p>
+              <p>报告生成</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="portfolio-evidence-grid" aria-label="ResearchFlowAgent 产品判断概览">
+        <article>
+          <span>用户场景</span>
+          <strong>科研文献调研</strong>
+          <p>研究人员需要在短时间内完成方向摸底、论文检索、证据整理和初版报告输出。</p>
+        </article>
+        <article>
+          <span>核心矛盾</span>
+          <strong>效率与可信度同时存在</strong>
+          <p>AI 可以提高生成效率，但科研场景不能接受无来源、不可追溯、无法中断修正的黑箱输出。</p>
+        </article>
+        <article>
+          <span>产品定位</span>
+          <strong>可控的 Agent 工作流</strong>
+          <p>把自主规划、知识检索、人工审核和结构化输出放入同一条链路，优先解决可控性和可验证性。</p>
+        </article>
+      </section>
+
+      <section id="overview" class="portfolio-section portfolio-summary-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">01 · 项目概览</p>
+          <h2>项目概览</h2>
+        </div>
+        <div class="portfolio-summary-grid">
+          <article>
+            <span>目标用户</span>
+            <strong>科研人员与研究团队</strong>
+            <p>需要快速完成文献调研、方向综述和研究问题拆解的学生、科研助理和研究组成员。</p>
+          </article>
+          <article>
+            <span>任务目标</span>
+            <strong>缩短调研到报告的路径</strong>
+            <p>把开放问题转化为可执行提纲、检索任务、证据片段和结构化报告。</p>
+          </article>
+          <article>
+            <span>关键约束</span>
+            <strong>来源可信与过程可控</strong>
+            <p>每次检索、审批和生成状态都需要可追踪，避免用户只拿到一段不可验证的 AI 总结。</p>
+          </article>
+          <article>
+            <span>项目角色</span>
+            <strong>核心链路与产品化拆解</strong>
+            <p>参与核心链路研发，围绕工作流、评测指标、人工审核和落地验证梳理产品表达。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="workflow" class="portfolio-section portfolio-demo-walkthrough">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">02 · 核心流程</p>
+          <h2>核心流程</h2>
+        </div>
+        <div class="portfolio-walkthrough-grid">
+          <article>
+            <span>01</span>
+            <h3>任务理解</h3>
+            <p>解析用户输入的研究问题，识别主题、范围、输出要求和需要进一步澄清的条件。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>提纲规划</h3>
+            <p>将开放问题拆成报告结构和检索子问题，避免 Agent 直接生成一段泛化总结。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>知识检索</h3>
+            <p>结合 Milvus + MCP 搭建 RAG 检索链路，为报告段落提供可回溯的来源证据。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>人工审批</h3>
+            <p>在关键节点让用户检查提纲、证据和方向，支持中断恢复，降低长任务失败后的返工成本。</p>
+          </article>
+        </div>
+        <div class="portfolio-demo-task">
+          <div>
+            <strong>流程定义</strong>
+            <p>完整路径为：任务理解 - 提纲规划 - 知识检索 - 人工审批 - 结构化报告输出；重点不是让 Agent 一路自动跑完，而是让用户能在关键节点控制方向。</p>
+          </div>
+          <a class="portfolio-primary-link" href="#mechanism">查看产品机制</a>
+        </div>
+      </section>
+
+      <section id="mechanism" class="portfolio-section portfolio-output-loop">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">03 · 产品机制</p>
+          <h2>产品机制</h2>
+        </div>
+        <div class="portfolio-loop-grid">
+          <article>
+            <span>Control</span>
+            <h3>人工审批</h3>
+            <p>把提纲确认、检索结果确认和报告生成放在可审批节点中，让用户在方向错误时及时修正。</p>
+          </article>
+          <article>
+            <span>Trust</span>
+            <h3>来源回溯</h3>
+            <p>报告内容需要关联检索证据，用户可以回看信息来源，降低 AI 总结不可验证的问题。</p>
+          </article>
+          <article>
+            <span>Recover</span>
+            <h3>中断恢复</h3>
+            <p>通过任务状态流转和持久化设计，让长任务可以在失败、暂停或人工干预后继续执行。</p>
+          </article>
+        </div>
+        <div class="portfolio-insight-grid">
+          <article>
+            <strong>为什么不做完全自动</strong>
+            <p>科研调研不是只追求速度，方向错误、来源不准和结论泛化都会放大后续成本，因此需要人机协同。</p>
+          </article>
+          <article>
+            <strong>为什么需要状态机</strong>
+            <p>任务理解、检索、审批和报告生成具有明确状态边界，用 LangGraph 管理流程能提升可解释性与可恢复性。</p>
+          </article>
+          <article>
+            <strong>为什么需要评测</strong>
+            <p>Agent 产品很容易只展示一次成功生成，benchmark 能持续观察完成率、耗时和审批轮次。</p>
+          </article>
+          <article>
+            <strong>产品取舍</strong>
+            <p>优先验证研究报告链路、来源可信和人工审批，不在当前阶段扩展多人权限、知识库商业化和复杂看板。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="evaluation" class="portfolio-section">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">04 · 评测体系</p>
+          <h2>benchmark 与指标设计</h2>
+        </div>
+        <div class="portfolio-table">
+          <div><strong>评测方式</strong><span>搭建 6 题 x 2 轮 benchmark，覆盖不同研究问题、检索任务和报告输出要求。</span></div>
+          <div><strong>记录格式</strong><span>输出 JSONL + Markdown 报表，便于复盘任务状态、失败原因和生成结果。</span></div>
+          <div><strong>核心指标</strong><span>关注全链路完成率、中位完成耗时、平均审批轮次、自动化测试通过率和落地使用反馈。</span></div>
+          <div><strong>优化动作</strong><span>针对重复初始化和冗余检索，完成 Prompt / LLM Client / MCP Tool Registry 缓存复用与检索策略收敛。</span></div>
+          <div><strong>产品价值</strong><span>通过指标观察 Agent 是否真的减少用户操作成本，而不是只在单次演示里生成一份报告。</span></div>
+        </div>
+      </section>
+
+      <section id="results" class="portfolio-section portfolio-output-loop">
+        <div class="portfolio-section-head">
+          <p class="portfolio-kicker">05 · 成果与边界</p>
+          <h2>成果与边界说明</h2>
+        </div>
+        <div class="portfolio-delivery-grid">
+          <article>
+            <strong>效率结果</strong>
+            <p>全链路完成率提升至 83.3%，中位完成耗时由 16.5s 降至 9.1s，平均审批轮次由 2.42 降至 1.00。</p>
+          </article>
+          <article>
+            <strong>稳定性结果</strong>
+            <p>保持 19/19 自动化测试通过，项目已应用于实验室 3 个研究组，平均节省文献调研时间约 2 小时。</p>
+          </article>
+          <article>
+            <strong>能力证明</strong>
+            <p>该案例展示了 AI Agent 产品从需求拆解、流程设计、人工审核到指标评估的完整落地思路。</p>
+          </article>
+        </div>
+        <div class="portfolio-doc-note">
+          <strong>边界说明</strong>
+          <p>
+            ResearchFlowAgent 是实验室项目，本页面采用脱敏产品案例表达，不公开内部数据、环境变量、完整源码或未授权材料。页面重点展示产品问题、流程设计、评测方法和可验证结果。
+          </p>
+          <div class="portfolio-hero-actions">
+            <a class="portfolio-primary-link" href="./researchflow-demo.html">体验静态 Demo</a>
+            <a class="portfolio-secondary-link" href="./portfolio.html">返回作品集总览</a>
+            <a class="portfolio-secondary-link" href="https://github.com/DouleStrong/storycraft-portfolio" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="portfolio-footer">
+        <div>
+          <strong>ResearchFlowAgent</strong>
+          <p>面向科研文献调研的 AI Agent 工作流产品案例，重点展示可控流程、人工审批、来源回溯和评测体系。</p>
+        </div>
+        <nav aria-label="ResearchFlowAgent 页脚导航">
+          <a href="./portfolio.html">作品集总览</a>
+          <a href="./researchflow-demo.html">体验 Demo</a>
+          <a href="https://github.com/DouleStrong/storycraft-portfolio" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </footer>
+    </main>
+    <script type="module" src="./portfolio-drawer.mjs"></script>
+  </body>
+</html>

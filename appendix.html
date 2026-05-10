@@ -20,21 +20,32 @@
   </head>
   <body class="portfolio-body">
     <main class="portfolio-shell">
+      <button class="portfolio-drawer-toggle" type="button" data-drawer-open aria-controls="portfolioDrawer" aria-expanded="false">目录</button>
+      <div class="portfolio-drawer-backdrop" data-drawer-close></div>
+      <aside id="portfolioDrawer" class="portfolio-sidebar portfolio-drawer" data-drawer-panel>
+          <a class="portfolio-brand" href="./storycraft.html" aria-label="返回 StoryCraft 案例页">
+            <span aria-hidden="true">S</span>
+            <strong>StoryCraft Studio</strong>
+          </a>
+          <nav class="portfolio-sidebar-nav" aria-label="产品附录侧边导航">
+            <a href="./portfolio.html">作品集总览</a>
+            <a href="./storycraft.html">StoryCraft 案例</a>
+            <a href="./prd.html">PRD 文档</a>
+            <a href="#prd">PRD 摘要</a>
+            <a href="#test-set">测试集样例</a>
+            <a href="#competitor-notes">竞品分析</a>
+            <a href="#iteration-log">迭代记录</a>
+            <a href="#demo-checklist">Demo 验收清单</a>
+          </nav>
+          <a class="portfolio-back-link portfolio-sidebar-back-link" href="./portfolio.html">返回作品集</a>
+      </aside>
+
       <header class="portfolio-nav">
-        <a class="portfolio-brand" href="./portfolio.html" aria-label="返回案例页">
-          <span aria-hidden="true">S</span>
-          <strong>StoryCraft Studio</strong>
-        </a>
-        <nav aria-label="产品附录导航">
-          <a href="./portfolio.html">案例首页</a>
-          <a href="./prd.html">PRD 文档</a>
-          <a href="#prd">PRD 摘要</a>
-          <a href="#test-set">测试集样例</a>
-          <a href="#competitor-notes">竞品分析</a>
-          <a href="#iteration-log">迭代记录</a>
-          <a href="#demo-checklist">Demo 验收清单</a>
-          <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
-        </nav>
+            <div>
+              <p class="portfolio-kicker">产品附录</p>
+              <strong>PRD、测试集与验收材料</strong>
+            </div>
+            <a class="portfolio-secondary-link" href="./prd.html">查看完整 PRD</a>
       </header>
 
       <section class="portfolio-hero appendix-hero">
@@ -45,17 +56,7 @@
             本页补充主案例页没有展开的产品材料，包括 PRD 摘要、测试集样例、竞品分析、迭代记录和 Demo 验收清单。内容按产品文档口径整理，重点说明需求范围、验证方式和边界说明。
           </p>
           <div class="portfolio-hero-actions">
-            <a class="portfolio-primary-link" href="./index.html?demo=1" data-demo-entry>先体验 Demo</a>
             <a class="portfolio-secondary-link" href="./prd.html">查看完整 PRD</a>
-            <a class="portfolio-secondary-link" href="./portfolio.html">返回案例页</a>
-            <a
-              class="portfolio-secondary-link"
-              href="https://github.com/DouleStrong/storycraft-portfolio"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
           </div>
         </div>
         <aside class="portfolio-demo-frame" aria-label="产品材料预览">
@@ -213,9 +214,9 @@
           <p>本页补充产品案例的可检查材料；公开联系方式本轮仅保留 GitHub。</p>
         </div>
         <nav aria-label="附录页脚导航">
-          <a href="./portfolio.html">案例首页</a>
+          <a href="./portfolio.html">作品集总览</a>
+          <a href="./storycraft.html">StoryCraft 案例</a>
           <a href="./prd.html">PRD 文档</a>
-          <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
           <a href="https://github.com/DouleStrong/storycraft-portfolio" target="_blank" rel="noreferrer">GitHub</a>
         </nav>
       </footer>
@@ -231,5 +232,6 @@
         }
       })();
     </script>
+    <script type="module" src="./portfolio-drawer.mjs"></script>
   </body>
 </html>

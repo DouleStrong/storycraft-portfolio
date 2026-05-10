@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResearchFlowAgent Demo | 研究型 AI Agent 工作流体验</title>
+    <meta
+      name="description"
+      content="ResearchFlowAgent 静态 Demo，体验研究问题输入、Agent 拆解、检索来源、人工审批、结构化报告和 benchmark 指标复盘。"
+    />
+    <meta property="og:title" content="ResearchFlowAgent Demo" />
+    <meta property="og:description" content="体验研究型 AI Agent 从研究问题到结构化报告的可控工作流。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://doulestrong.github.io/storycraft-portfolio/researchflow-demo.html" />
+    <link rel="canonical" href="https://doulestrong.github.io/storycraft-portfolio/researchflow-demo.html" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="portfolio-body researchflow-demo-body">
+    <main class="researchflow-demo-shell">
+      <button class="portfolio-drawer-toggle" type="button" data-drawer-open aria-controls="portfolioDrawer" aria-expanded="false">目录</button>
+      <div class="portfolio-drawer-backdrop" data-drawer-close></div>
+      <aside id="portfolioDrawer" class="portfolio-sidebar portfolio-drawer" data-drawer-panel>
+          <a class="portfolio-brand" href="./researchflow.html" aria-label="返回 ResearchFlowAgent 案例页">
+            <span aria-hidden="true">R</span>
+            <strong>ResearchFlowAgent</strong>
+          </a>
+          <nav class="portfolio-sidebar-nav" aria-label="ResearchFlowAgent Demo 侧边导航">
+            <a href="./researchflow.html">案例页</a>
+            <a href="./portfolio.html">作品集</a>
+            <a href="#report-panel">结构化报告</a>
+            <a href="#metrics-panel">benchmark 指标</a>
+          </nav>
+          <a class="portfolio-back-link portfolio-sidebar-back-link" href="./portfolio.html">返回作品集</a>
+      </aside>
+
+      <header class="portfolio-nav">
+            <div>
+              <p class="portfolio-kicker">ResearchFlowAgent Demo</p>
+              <strong>研究型 AI Agent 工作流体验</strong>
+            </div>
+      </header>
+
+      <section class="researchflow-demo-board" aria-label="ResearchFlowAgent 静态 Demo 工作台">
+        <aside class="researchflow-demo-sidebar">
+          <p class="portfolio-kicker">Demo Flow</p>
+          <h1>研究型 AI Agent 工作流体验</h1>
+          <p>
+            这个静态 Demo 用三条真实复跑任务展示 ResearchFlowAgent 的产品机制：研究问题输入、Agent 拆解、检索来源、人工审批、结构化报告和运行复盘。
+          </p>
+          <div class="researchflow-question-card">
+            <label for="research-question">研究问题</label>
+            <textarea id="research-question" data-question-input rows="5">请研究 AI Coding Agent 在中小团队研发流程中的典型应用场景，并给出一份面向技术负责人的选型建议。</textarea>
+            <button class="portfolio-primary-link" type="button" data-start-demo>开始拆解</button>
+          </div>
+          <div class="researchflow-example-card">
+            <strong>项目运行效果</strong>
+            <button type="button" data-example-id="ai-coding-agent">
+              <span>AI Coding Agent 选型</span>
+              <em>请研究 AI Coding Agent 在中小团队研发流程中的典型应用场景，并给出一份面向技术负责人的选型建议。</em>
+            </button>
+            <button type="button" data-example-id="mcp-enterprise">
+              <span>MCP 落地研究</span>
+              <em>请分析 MCP 在企业级 Agent 系统中的价值、落地方式与实施风险。</em>
+            </button>
+            <button type="button" data-example-id="coding-tools-compare">
+              <span>工具对比研究</span>
+              <em>请比较 Cursor、Claude Code、Codex CLI 在研发团队中的协作价值，并形成结构化建议。</em>
+            </button>
+          </div>
+          <ol class="researchflow-stepper" aria-label="Demo 步骤">
+            <li data-demo-step="understand" class="is-active">
+              <button type="button" data-step-button="understand">
+                <span>01</span>
+                <strong>任务理解</strong>
+                <small>任务理解产物</small>
+              </button>
+            </li>
+            <li data-demo-step="plan">
+              <button type="button" data-step-button="plan">
+                <span>02</span>
+                <strong>Agent 拆解</strong>
+                <small>Agent 拆解产物</small>
+              </button>
+            </li>
+            <li data-demo-step="retrieve">
+              <button type="button" data-step-button="retrieve">
+                <span>03</span>
+                <strong>检索来源</strong>
+                <small>检索来源产物</small>
+              </button>
+            </li>
+            <li data-demo-step="approve">
+              <button type="button" data-step-button="approve">
+                <span>04</span>
+                <strong>人工审批</strong>
+                <small>人工审批产物</small>
+              </button>
+            </li>
+            <li data-demo-step="report">
+              <button type="button" data-step-button="report">
+                <span>05</span>
+                <strong>结构化报告</strong>
+                <small>结构化报告产物</small>
+              </button>
+            </li>
+          </ol>
+        </aside>
+
+        <section class="researchflow-workspace">
+          <div class="researchflow-stage-card" aria-live="polite">
+            <div class="researchflow-stage-head">
+              <div>
+                <p class="portfolio-kicker" data-stage-kicker>01 · 任务理解</p>
+                <h2 data-stage-title>等待输入研究问题</h2>
+              </div>
+              <span data-agent-status>待开始</span>
+            </div>
+            <p data-stage-copy>
+              点击“开始拆解”后，系统会模拟 Agent 识别研究主题、输出提纲、检索来源，并等待用户审批后生成报告。
+            </p>
+            <div class="researchflow-stage-actions">
+              <button type="button" class="portfolio-secondary-link" data-prev-step>上一步</button>
+              <button type="button" class="portfolio-primary-link" data-next-step>下一步</button>
+            </div>
+          </div>
+
+          <article class="researchflow-artifact-card" data-step-artifact>
+            <div class="researchflow-panel-head">
+              <h3>任务理解产物</h3>
+              <span>research-intent</span>
+            </div>
+            <div class="researchflow-artifact-grid">
+              <article>
+                <strong>识别主题</strong>
+                <p>等待选择问题后展示研究对象、目标受众和输出形式。</p>
+              </article>
+              <article>
+                <strong>执行约束</strong>
+                <p>等待 Agent 判断是否需要检索、审批和来源回溯。</p>
+              </article>
+              <article>
+                <strong>证据边界</strong>
+                <p>等待检索后标记 arXiv 与本地知识库覆盖情况。</p>
+              </article>
+            </div>
+          </article>
+
+          <div class="researchflow-panel-grid">
+            <article class="researchflow-panel">
+              <div class="researchflow-panel-head">
+                <h3>Agent 拆解</h3>
+                <span data-outline-state>待生成</span>
+              </div>
+              <ul class="researchflow-outline" data-outline-list>
+                <li>等待 Agent 生成研究提纲</li>
+              </ul>
+              <button type="button" class="portfolio-secondary-link" data-approve-outline>人工审批提纲</button>
+            </article>
+
+            <article class="researchflow-panel">
+              <div class="researchflow-panel-head">
+                <h3>检索来源</h3>
+                <span data-source-state>待检索</span>
+              </div>
+              <div class="researchflow-source-list" data-source-cards>
+                <p>完成 Agent 拆解后展示来源卡片。</p>
+              </div>
+            </article>
+          </div>
+
+          <section id="report-panel" class="researchflow-report-card">
+            <div class="researchflow-panel-head">
+              <h3>结构化报告</h3>
+              <span data-report-state>待生成</span>
+            </div>
+            <div data-report-output>
+              <p>审批通过后生成结构化报告，包括研究摘要、关键发现、执行步骤、参考来源和下一步建议。</p>
+            </div>
+            <button type="button" class="portfolio-primary-link" data-generate-report>生成报告</button>
+          </section>
+
+          <section class="researchflow-run-replay" data-run-replay>
+            <div class="researchflow-panel-head">
+              <h3>运行回放</h3>
+              <span data-run-status>本轮真实运行</span>
+            </div>
+            <div class="researchflow-run-meta" data-run-meta>
+              <article>
+                <span>本轮真实运行</span>
+                <strong>completed</strong>
+                <p>三条推荐问题均完成：1 轮人工审批、5 条来源、生成结构化报告。</p>
+              </article>
+              <article>
+                <span>检索边界</span>
+                <strong>arXiv 主证据源</strong>
+                <p>Milvus 本地库本轮未初始化/未命中，未作为证据来源使用。</p>
+              </article>
+              <article>
+                <span>历史 benchmark</span>
+                <strong>83.33%</strong>
+                <p>最终版完成率；历史总完成中位耗时 9117.5 ms，平均审批轮次 1.00。</p>
+              </article>
+            </div>
+            <div class="researchflow-run-events" data-run-events>
+              <article>
+                <span>2026-05-09</span>
+                <strong>报告完成</strong>
+                <p>输出研究摘要、执行步骤、参考来源和下一步建议。</p>
+              </article>
+            </div>
+            <div class="researchflow-run-result" data-run-result>
+              <p>请选择左侧项目运行问题，查看对应的来源卡、运行口径和结构化报告回放。</p>
+            </div>
+          </section>
+        </section>
+
+        <aside class="researchflow-metrics" id="metrics-panel">
+          <p class="portfolio-kicker">Evaluation</p>
+          <h2>benchmark 指标</h2>
+          <div class="researchflow-metric-list">
+            <article>
+              <span>完成率</span>
+              <strong>83.3%</strong>
+              <p>6 题 x 2 轮任务集</p>
+            </article>
+            <article>
+              <span>中位耗时</span>
+              <strong>9.1s</strong>
+              <p>优化前 16.5s</p>
+            </article>
+            <article>
+              <span>审批轮次</span>
+              <strong>1.00</strong>
+              <p>优化前 2.42</p>
+            </article>
+            <article>
+              <span>自动化测试</span>
+              <strong>19/19</strong>
+              <p>核心链路通过</p>
+            </article>
+          </div>
+          <div class="researchflow-boundary-note">
+            <strong>边界说明</strong>
+            <p>当前为静态交互 Demo，用于展示产品流程和评测口径；页面不会调用真实模型，也不包含 API Key、内部论文库或实验室敏感数据。</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="./researchflow-demo.mjs"></script>
+    <script type="module" src="./portfolio-drawer.mjs"></script>
+  </body>
+</html>

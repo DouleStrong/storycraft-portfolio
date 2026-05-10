@@ -21,6 +21,7 @@
   --radius-lg: 20px;
   --radius-md: 14px;
   --workspace-grid-height: 760px;
+  --drawer-toggle-safe-area: 112px;
 }
 
 * {
@@ -3092,11 +3093,178 @@ body[data-demo-mode="true"] {
 }
 
 .portfolio-shell {
-  width: min(1180px, calc(100vw - 40px));
+  width: min(1380px, calc(100vw - 40px));
   margin: 0 auto;
   padding: 22px 0 56px;
+}
+
+.portfolio-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.researchflow-demo-layout {
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+
+.portfolio-content {
+  min-width: 0;
   display: grid;
   gap: 22px;
+}
+
+.portfolio-sidebar {
+  position: sticky;
+  top: 22px;
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid rgba(86, 96, 140, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 16px 36px rgba(73, 88, 146, 0.1);
+}
+
+.portfolio-sidebar-nav {
+  display: grid;
+  gap: 8px;
+}
+
+.portfolio-sidebar-nav a {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #374151;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.portfolio-sidebar-nav a:hover {
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.portfolio-sidebar-nav a:last-child {
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(90deg, #0f766e, #2563eb);
+  box-shadow: 0 12px 22px rgba(15, 118, 110, 0.16);
+}
+
+.portfolio-back-link,
+.demo-back-link {
+  width: fit-content;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #374151;
+  background: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.portfolio-back-link::before,
+.demo-back-link::before {
+  content: "←";
+  font-size: 0.95rem;
+}
+
+.portfolio-back-link {
+  margin-top: 2px;
+}
+
+.portfolio-back-link:hover,
+.demo-back-link:hover {
+  border-color: #93c5fd;
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.portfolio-sidebar-back-link {
+  width: 100%;
+  margin-top: 4px;
+  justify-self: stretch;
+  color: #4b5563;
+  background: #ffffff;
+}
+
+.portfolio-drawer-toggle {
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  z-index: 70;
+  width: fit-content;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #374151;
+  background: #ffffff;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(73, 88, 146, 0.08);
+}
+
+.portfolio-drawer-toggle::before {
+  content: "☰";
+  margin-right: 8px;
+  color: #0f766e;
+  font-size: 0.92rem;
+}
+
+.portfolio-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.portfolio-drawer {
+  position: fixed;
+  top: 22px;
+  bottom: 22px;
+  left: 22px;
+  z-index: 110;
+  width: min(320px, calc(100vw - 44px));
+  overflow-y: auto;
+  transform: translateX(calc(-100% - 32px));
+  transition: transform 220ms ease;
+}
+
+.portfolio-shell.has-drawer-open .portfolio-drawer,
+.researchflow-demo-shell.has-drawer-open .portfolio-drawer,
+body.has-drawer-open .portfolio-drawer {
+  transform: translateX(0);
+}
+
+.portfolio-shell.has-drawer-open .portfolio-drawer-backdrop,
+.researchflow-demo-shell.has-drawer-open .portfolio-drawer-backdrop,
+body.has-drawer-open .portfolio-drawer-backdrop {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .portfolio-nav {
@@ -3106,6 +3274,7 @@ body[data-demo-mode="true"] {
   justify-content: space-between;
   gap: 20px;
   padding: 0 18px;
+  padding-left: var(--drawer-toggle-safe-area);
   border: 1px solid rgba(86, 96, 140, 0.12);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.86);
@@ -3359,6 +3528,7 @@ body[data-demo-mode="true"] {
 .portfolio-evaluation-method,
 .portfolio-eval-grid,
 .portfolio-summary-grid,
+.portfolio-reading-list,
 .portfolio-delivery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3376,6 +3546,7 @@ body[data-demo-mode="true"] {
 .portfolio-timeline article,
 .portfolio-eval-grid article,
 .portfolio-summary-grid article,
+.portfolio-reading-list article,
 .portfolio-delivery-grid article {
   gap: 10px;
   padding: 20px;
@@ -3391,6 +3562,7 @@ body[data-demo-mode="true"] {
 .portfolio-loop-grid span,
 .portfolio-walkthrough-grid span,
 .portfolio-summary-grid span,
+.portfolio-reading-list span,
 .portfolio-timeline span {
   color: #0f766e;
   font-size: 0.78rem;
@@ -3399,6 +3571,7 @@ body[data-demo-mode="true"] {
 
 .portfolio-evidence-grid strong,
 .portfolio-summary-grid strong,
+.portfolio-reading-list strong,
 .portfolio-delivery-grid strong {
   color: #111827;
   font-size: 1.05rem;
@@ -3418,6 +3591,118 @@ body[data-demo-mode="true"] {
 .portfolio-summary-grid article {
   align-content: start;
   background: rgba(255, 255, 255, 0.88);
+}
+
+.portfolio-overview-hero {
+  min-height: 440px;
+  grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.68fr);
+  background: #ffffff;
+  box-shadow: 0 18px 38px rgba(73, 88, 146, 0.08);
+}
+
+.portfolio-overview-hero h1 {
+  max-width: 560px;
+  font-size: clamp(1.75rem, 2.7vw, 2.35rem);
+  line-height: 1.24;
+  font-weight: 720;
+}
+
+.portfolio-overview-hero .portfolio-demo-frame {
+  align-self: center;
+  box-shadow: none;
+  background: #ffffff;
+}
+
+.portfolio-overview-hero .portfolio-profile-table div {
+  border-bottom: 1px solid #eef2f7;
+}
+
+.portfolio-overview-hero .portfolio-profile-table div:last-child {
+  border-bottom: 0;
+}
+
+.portfolio-reading-section {
+  background: #ffffff;
+}
+
+.portfolio-reading-list article {
+  position: relative;
+  align-content: start;
+  min-height: 170px;
+  border-color: rgba(17, 24, 39, 0.1);
+  box-shadow: none;
+}
+
+.portfolio-reading-list span {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #ecfdf5;
+}
+
+.portfolio-profile-table {
+  margin: 0;
+}
+
+.portfolio-profile-table div {
+  grid-template-columns: 86px minmax(0, 1fr);
+}
+
+.portfolio-case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.portfolio-case-card {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 22px;
+  border: 1px solid rgba(86, 96, 140, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(73, 88, 146, 0.08);
+}
+
+.portfolio-case-card > span {
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.portfolio-case-card h3 {
+  font-size: 1.24rem;
+}
+
+.portfolio-case-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.portfolio-case-meta b,
+.portfolio-case-meta span {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+.portfolio-case-meta b {
+  color: #111827;
+  background: #f3f4f6;
+}
+
+.portfolio-case-meta span {
+  color: #0f766e;
+  background: #ccfbf1;
+  font-weight: 760;
 }
 
 .portfolio-doc-note,
@@ -3680,19 +3965,441 @@ body[data-demo-mode="true"] {
   text-decoration: none;
 }
 
+.researchflow-demo-body {
+  background: #f5f7fb;
+}
+
+.researchflow-demo-shell {
+  width: min(1800px, calc(100vw - 40px));
+  margin: 0 auto;
+  padding: 22px 0 42px;
+  display: grid;
+  gap: 18px;
+}
+
+.researchflow-demo-board {
+  min-height: calc(100vh - 122px);
+  display: grid;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(420px, 1.35fr) minmax(240px, 0.72fr);
+  gap: 16px;
+}
+
+.researchflow-demo-sidebar,
+.researchflow-workspace,
+.researchflow-metrics,
+.researchflow-stage-card,
+.researchflow-panel,
+.researchflow-report-card {
+  border: 1px solid rgba(86, 96, 140, 0.12);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(73, 88, 146, 0.08);
+}
+
+.researchflow-demo-sidebar,
+.researchflow-workspace,
+.researchflow-metrics {
+  padding: 18px;
+}
+
+.researchflow-demo-sidebar,
+.researchflow-workspace,
+.researchflow-metrics,
+.researchflow-stage-card,
+.researchflow-panel,
+.researchflow-report-card,
+.researchflow-question-card,
+.researchflow-example-card,
+.researchflow-stepper,
+.researchflow-source-list,
+.researchflow-metric-list,
+.researchflow-boundary-note,
+.researchflow-outline,
+[data-report-output] {
+  display: grid;
+  gap: 14px;
+}
+
+.researchflow-demo-sidebar {
+  align-content: start;
+}
+
+.researchflow-demo-sidebar h1,
+.researchflow-metrics h2,
+.researchflow-stage-head h2 {
+  margin: 0;
+  color: var(--portfolio-heading);
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.researchflow-demo-sidebar h1 {
+  font-size: clamp(1.45rem, 2.2vw, 2.2rem);
+  line-height: 1.18;
+}
+
+.researchflow-demo-sidebar p,
+.researchflow-stage-card p,
+.researchflow-panel p,
+.researchflow-report-card p,
+.researchflow-metrics p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.72;
+}
+
+.researchflow-question-card {
+  padding: 14px;
+  border: 1px solid #dbe2f0;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.researchflow-question-card label {
+  color: #111827;
+  font-weight: 800;
+}
+
+.researchflow-question-card textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 112px;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #111827;
+  background: #ffffff;
+  font: inherit;
+  line-height: 1.6;
+}
+
+.researchflow-example-card {
+  padding: 14px;
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.researchflow-example-card strong {
+  color: #111827;
+}
+
+.researchflow-example-card button {
+  min-height: 62px;
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #374151;
+  background: #f9fafb;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-align: left;
+  cursor: pointer;
+}
+
+.researchflow-example-card button span,
+.researchflow-example-card button em {
+  display: block;
+}
+
+.researchflow-example-card button em {
+  color: #6b7280;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.researchflow-example-card button.is-active {
+  border-color: rgba(15, 118, 110, 0.42);
+  color: #0f766e;
+  background: #f0fdfa;
+}
+
+.researchflow-example-card button.is-active em {
+  color: #0f766e;
+}
+
+.researchflow-stepper {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.researchflow-stepper li {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  color: #4b5563;
+  background: #ffffff;
+}
+
+.researchflow-stepper button {
+  width: 100%;
+  min-height: 62px;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  column-gap: 10px;
+  row-gap: 2px;
+  align-items: center;
+  padding: 8px;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.researchflow-stepper button strong,
+.researchflow-stepper button small {
+  grid-column: 2;
+}
+
+.researchflow-stepper button small {
+  color: #6b7280;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.researchflow-stepper span {
+  width: 34px;
+  height: 34px;
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #0f766e;
+  background: #ccfbf1;
+  font-weight: 800;
+}
+
+.researchflow-stepper li.is-active {
+  border-color: rgba(15, 118, 110, 0.42);
+  background: #f0fdfa;
+}
+
+.researchflow-stepper li.is-done span {
+  color: #ffffff;
+  background: #0f766e;
+}
+
+.researchflow-workspace {
+  align-content: start;
+}
+
+.researchflow-stage-card,
+.researchflow-panel,
+.researchflow-report-card {
+  padding: 18px;
+}
+
+.researchflow-stage-head,
+.researchflow-panel-head,
+.researchflow-stage-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.researchflow-stage-head span,
+.researchflow-panel-head span {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 8px;
+  color: #1d4ed8;
+  background: #dbeafe;
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.researchflow-stage-actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.researchflow-panel-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 16px;
+}
+
+.researchflow-panel-head h3,
+.researchflow-report-card h3 {
+  margin: 0;
+  color: #111827;
+}
+
+.researchflow-outline {
+  margin: 0;
+  padding-left: 18px;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.researchflow-source-list article,
+[data-report-output] article,
+.researchflow-metric-list article,
+.researchflow-boundary-note,
+.researchflow-run-meta article,
+.researchflow-run-events article,
+.researchflow-run-result article {
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.researchflow-source-list strong,
+[data-report-output] strong,
+.researchflow-metric-list strong,
+.researchflow-boundary-note strong {
+  color: #111827;
+}
+
+.researchflow-source-list span,
+.researchflow-metric-list span {
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.researchflow-metrics {
+  align-content: start;
+}
+
+.researchflow-metric-list article {
+  display: grid;
+  gap: 5px;
+  background: #ffffff;
+}
+
+.researchflow-metric-list strong {
+  font-size: 1.5rem;
+}
+
+.researchflow-boundary-note {
+  background: #fff7ed;
+}
+
+.researchflow-run-replay {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(245, 158, 11, 0.24);
+  border-radius: 10px;
+  background:
+    linear-gradient(135deg, rgba(255, 251, 235, 0.9), rgba(255, 255, 255, 0.94)),
+    #ffffff;
+  box-shadow: 0 14px 34px rgba(73, 88, 146, 0.08);
+}
+
+.researchflow-run-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.researchflow-run-result {
+  display: grid;
+  gap: 10px;
+}
+
+.researchflow-run-events {
+  display: grid;
+  gap: 10px;
+}
+
+.researchflow-run-meta span {
+  color: #92400e;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.researchflow-run-meta strong,
+.researchflow-run-events strong,
+.researchflow-run-result strong {
+  color: #111827;
+}
+
+.researchflow-run-events span {
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.researchflow-artifact-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  border-radius: 10px;
+  background:
+    linear-gradient(135deg, rgba(240, 253, 250, 0.88), rgba(255, 255, 255, 0.94)),
+    #ffffff;
+  box-shadow: 0 14px 34px rgba(73, 88, 146, 0.08);
+}
+
+.researchflow-artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.researchflow-artifact-grid article {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid #dbe2f0;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.researchflow-artifact-grid strong {
+  color: #111827;
+}
+
+.researchflow-stage-actions button:disabled,
+.researchflow-panel button:disabled,
+.researchflow-report-card button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
 @media (max-width: 980px) {
+  .portfolio-shell,
+  .researchflow-demo-shell {
+    padding-top: var(--drawer-toggle-safe-area);
+  }
+
   .portfolio-nav,
   .portfolio-section-head {
     align-items: flex-start;
   }
 
-  .portfolio-nav {
-    flex-direction: column;
-    padding: 16px;
+  .portfolio-layout {
+    grid-template-columns: 1fr;
   }
 
-  .portfolio-nav nav {
-    justify-content: flex-start;
+  .researchflow-demo-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-sidebar:not(.portfolio-drawer) {
+    position: static;
+  }
+
+  .portfolio-sidebar-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portfolio-nav {
+    display: none;
   }
 
   .portfolio-hero,
@@ -3710,6 +4417,10 @@ body[data-demo-mode="true"] {
   }
 
   .portfolio-demo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-case-grid {
     grid-template-columns: 1fr;
   }
 
@@ -3743,11 +4454,26 @@ body[data-demo-mode="true"] {
   .portfolio-footer nav {
     justify-content: flex-start;
   }
+
+  .researchflow-demo-board,
+  .researchflow-panel-grid,
+  .researchflow-artifact-grid,
+  .researchflow-run-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .researchflow-demo-board {
+    min-height: auto;
+  }
 }
 
 @media (max-width: 640px) {
   .portfolio-shell {
     width: min(100vw - 20px, 1180px);
+  }
+
+  .portfolio-sidebar-nav {
+    grid-template-columns: 1fr;
   }
 
   .portfolio-hero,
@@ -3765,6 +4491,16 @@ body[data-demo-mode="true"] {
   .portfolio-summary-grid,
   .portfolio-eval-grid {
     grid-template-columns: 1fr;
+  }
+
+  .researchflow-demo-shell {
+    width: min(100vw - 20px, 1280px);
+  }
+
+  .researchflow-stage-head,
+  .researchflow-panel-head {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
@@ -3811,6 +4547,7 @@ body[data-demo-mode="true"] .app-shell > .topbar {
   justify-content: space-between;
   gap: 24px;
   padding: 0 24px;
+  padding-left: var(--drawer-toggle-safe-area);
   border-bottom: 1px solid #e5e7eb;
   background: #ffffff;
 }
@@ -3878,6 +4615,11 @@ body[data-demo-mode="true"] .app-shell > .topbar {
   justify-content: flex-end;
   gap: 12px;
   margin-left: auto;
+}
+
+.figma-demo-topbar .demo-back-link {
+  flex: 0 0 auto;
+  min-height: 34px;
 }
 
 .demo-toolbar-button,
@@ -4802,6 +5544,22 @@ body[data-demo-mode="true"] .app-shell > .topbar {
   .figma-demo-grid {
     grid-template-columns: 1fr;
     overflow: visible;
+  }
+
+  .figma-demo-topbar {
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 14px 18px;
+    padding-left: var(--drawer-toggle-safe-area);
+  }
+
+  .demo-topbar-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 0;
   }
 
   .demo-sidebar,

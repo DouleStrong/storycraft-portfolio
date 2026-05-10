@@ -17,20 +17,33 @@
   </head>
   <body class="portfolio-body">
     <main class="portfolio-shell">
+      <button class="portfolio-drawer-toggle" type="button" data-drawer-open aria-controls="portfolioDrawer" aria-expanded="false">目录</button>
+      <div class="portfolio-drawer-backdrop" data-drawer-close></div>
+      <aside id="portfolioDrawer" class="portfolio-sidebar portfolio-drawer" data-drawer-panel>
+          <a class="portfolio-brand" href="./storycraft.html" aria-label="返回 StoryCraft 案例页">
+            <span aria-hidden="true">S</span>
+            <strong>StoryCraft Studio</strong>
+          </a>
+          <nav class="portfolio-sidebar-nav" aria-label="PRD 文档侧边导航">
+            <a href="./portfolio.html">作品集总览</a>
+            <a href="./storycraft.html">StoryCraft 案例</a>
+            <a href="./appendix.html">产品附录</a>
+            <a href="#doc-info">文档信息</a>
+            <a href="#requirement-scope">需求范围</a>
+            <a href="#functional-requirements">功能需求</a>
+            <a href="#acceptance">验收标准</a>
+            <a href="#test-set">测试集样例</a>
+            <a href="#boundary">边界说明</a>
+          </nav>
+          <a class="portfolio-back-link portfolio-sidebar-back-link" href="./portfolio.html">返回作品集</a>
+      </aside>
+
       <header class="portfolio-nav">
-        <a class="portfolio-brand" href="./portfolio.html" aria-label="返回案例页">
-          <span aria-hidden="true">S</span>
-          <strong>StoryCraft Studio</strong>
-        </a>
-        <nav aria-label="PRD 文档导航">
-          <a href="./portfolio.html">案例首页</a>
-          <a href="./appendix.html">产品附录</a>
-          <a href="#requirement-scope">需求范围</a>
-          <a href="#functional-requirements">功能需求</a>
-          <a href="#acceptance">验收标准</a>
-          <a href="#test-set">测试集样例</a>
-          <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
-        </nav>
+            <div>
+              <p class="portfolio-kicker">PRD 文档</p>
+              <strong>剧情与智能 NPC 对话生产后台</strong>
+            </div>
+            <a class="portfolio-secondary-link" href="./docs/storycraft-studio-prd.md">Markdown 版</a>
       </header>
 
       <section class="portfolio-hero appendix-hero">
@@ -42,9 +55,7 @@
             和测试集回流。当前版本用于说明产品设计和验收逻辑，不声明真实后端或真实模型能力已经上线。
           </p>
           <div class="portfolio-hero-actions">
-            <a class="portfolio-primary-link" href="./index.html?demo=1" data-demo-entry>查看 Demo</a>
             <a class="portfolio-secondary-link" href="./docs/storycraft-studio-prd.md">Markdown 版 PRD</a>
-            <a class="portfolio-secondary-link" href="./portfolio.html">返回案例页</a>
           </div>
         </div>
         <aside class="portfolio-demo-frame" aria-label="PRD 文档信息">
@@ -229,10 +240,10 @@
           <p>网页版 PRD 与 Markdown 备案版保持同一产品范围：剧情与智能 NPC 对话生产闭环。</p>
         </div>
         <nav aria-label="PRD 页脚导航">
-          <a href="./portfolio.html">案例首页</a>
+          <a href="./portfolio.html">作品集总览</a>
+          <a href="./storycraft.html">StoryCraft 案例</a>
           <a href="./appendix.html">产品附录</a>
           <a href="./docs/storycraft-studio-prd.md">Markdown 版</a>
-          <a href="./index.html?demo=1" data-demo-entry>体验 Demo</a>
         </nav>
       </footer>
     </main>
@@ -247,5 +258,6 @@
         }
       })();
     </script>
+    <script type="module" src="./portfolio-drawer.mjs"></script>
   </body>
 </html>
