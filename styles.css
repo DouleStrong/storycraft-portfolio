@@ -3152,11 +3152,18 @@ body[data-demo-mode="true"] {
   background: #eff6ff;
 }
 
-.portfolio-sidebar-nav a:last-child {
-  justify-content: center;
-  color: #ffffff;
-  background: linear-gradient(90deg, #0f766e, #2563eb);
-  box-shadow: 0 12px 22px rgba(15, 118, 110, 0.16);
+.portfolio-sidebar-nav a.portfolio-sidebar-project-link {
+  min-height: 46px;
+  border-color: #bfdbfe;
+  color: #2563eb;
+  background: #eff6ff;
+  font-weight: 800;
+}
+
+.portfolio-sidebar-nav a.portfolio-sidebar-project-link:hover {
+  border-color: #93c5fd;
+  color: #1d4ed8;
+  background: #dbeafe;
 }
 
 .portfolio-back-link,

@@ -141,6 +141,16 @@ test("portfolio page uses the same drawer navigation as supporting pages", () =>
   assert.doesNotMatch(headerOnly, /#results-boundary/);
 });
 
+test("drawer project links share the same visual treatment", () => {
+  const portfolio = read("portfolio.html");
+  const styles = read("styles.css");
+
+  assert.match(portfolio, /class="portfolio-sidebar-project-link" href="\.\/storycraft\.html"/);
+  assert.match(portfolio, /class="portfolio-sidebar-project-link" href="\.\/researchflow\.html"/);
+  assert.match(styles, /\.portfolio-sidebar-nav a\.portfolio-sidebar-project-link/);
+  assert.doesNotMatch(styles, /\.portfolio-sidebar-nav a:last-child/);
+});
+
 test("portfolio first screen keeps project case paths instead of product demo paths", () => {
   const portfolio = read("portfolio.html");
   const heroStart = portfolio.indexOf('id="overview"');
