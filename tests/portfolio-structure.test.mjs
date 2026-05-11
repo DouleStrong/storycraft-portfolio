@@ -379,6 +379,43 @@ test("formal PRD exists in web and markdown formats with execution-level section
   assert.match(prdPage, /index\.html\?demo=1/);
 });
 
+test("StoryCraft PRD follows AI product PRD structure", () => {
+  const prdPage = read("prd.html");
+  const prdMarkdown = read("docs/storycraft-studio-prd.md");
+
+  for (const [label, source] of [
+    ["web PRD", prdPage],
+    ["markdown PRD", prdMarkdown],
+  ]) {
+    for (const pattern of [
+      /价值判断/,
+      /必须用大模型/,
+      /规则和传统算法/,
+      /业务目标/,
+      /模型目标/,
+      /AI Workflow/,
+      /模型选型策略/,
+      /小模型优先/,
+      /Prompt 工程/,
+      /Prompt 版本/,
+      /Planner\/剧情节点/,
+      /Character\/NPC 节点/,
+      /Reviewer 节点/,
+      /评测系统/,
+      /评测集构建/,
+      /评分标准/,
+      /失败样本回流/,
+      /稳定性与兜底/,
+      /兜底回答/,
+      /人工干预/,
+      /产品能力承载/,
+      /把不确定性变成可控/,
+    ]) {
+      assert.match(source, pattern, `${label} should contain ${pattern}`);
+    }
+  }
+});
+
 test("portfolio, appendix, and README link to the formal PRD", () => {
   const portfolio = read("portfolio.html");
   const storycraft = read("storycraft.html");

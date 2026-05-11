@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StoryCraft Studio PRD | 剧情与智能 NPC 对话生产后台</title>
+    <title>StoryCraft Studio AI 产品 PRD | 剧情与智能 NPC 对话生产后台</title>
     <meta
       name="description"
-      content="StoryCraft Studio 规范 PRD，覆盖剧情生产后台、角色卡、NPC 单聊、AI Reviewer、测试集回流、验收标准与边界说明。"
+      content="StoryCraft Studio AI 产品 PRD，说明剧情与智能 NPC 对话生产后台的价值判断、AI Workflow、模型选型、Prompt 工程、评测系统、兜底策略和验收标准。"
     />
-    <meta property="og:title" content="StoryCraft Studio PRD" />
-    <meta property="og:description" content="剧情与智能 NPC 对话生产后台的落地执行版 PRD。" />
+    <meta property="og:title" content="StoryCraft Studio AI 产品 PRD" />
+    <meta property="og:description" content="把 AI 产品的不确定性拆成可评测、可回流、可兜底的剧情与智能 NPC 生产流程。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://doulestrong.github.io/storycraft-portfolio/prd.html" />
     <link rel="canonical" href="https://doulestrong.github.io/storycraft-portfolio/prd.html" />
@@ -20,57 +20,57 @@
       <button class="portfolio-drawer-toggle" type="button" data-drawer-open aria-controls="portfolioDrawer" aria-expanded="false">目录</button>
       <div class="portfolio-drawer-backdrop" data-drawer-close></div>
       <aside id="portfolioDrawer" class="portfolio-sidebar portfolio-drawer" data-drawer-panel>
-          <a class="portfolio-brand" href="./storycraft.html" aria-label="返回 StoryCraft 案例页">
-            <span aria-hidden="true">S</span>
-            <strong>StoryCraft Studio</strong>
-          </a>
-          <nav class="portfolio-sidebar-nav" aria-label="PRD 文档侧边导航">
-            <a href="./portfolio.html">作品集总览</a>
-            <a href="./storycraft.html">StoryCraft 案例</a>
-            <a href="./appendix.html">产品附录</a>
-            <a href="#doc-info">文档信息</a>
-            <a href="#requirement-scope">需求范围</a>
-            <a href="#functional-requirements">功能需求</a>
-            <a href="#acceptance">验收标准</a>
-            <a href="#test-set">测试集样例</a>
-            <a href="#boundary">边界说明</a>
-          </nav>
-          <a class="portfolio-back-link portfolio-sidebar-back-link" href="./portfolio.html">返回作品集</a>
+        <a class="portfolio-brand" href="./storycraft.html" aria-label="返回 StoryCraft 案例页">
+          <span aria-hidden="true">S</span>
+          <strong>StoryCraft Studio</strong>
+        </a>
+        <nav class="portfolio-sidebar-nav" aria-label="PRD 文档侧边导航">
+          <a href="./portfolio.html">作品集总览</a>
+          <a href="./storycraft.html">StoryCraft 案例</a>
+          <a href="./appendix.html">产品附录</a>
+          <a href="#doc-info">文档信息</a>
+          <a href="#value-goals">价值与目标</a>
+          <a href="#core-flow">AI Workflow</a>
+          <a href="#functional-requirements">功能需求</a>
+          <a href="#ai-design">AI 方案</a>
+          <a href="#acceptance">验收标准</a>
+          <a href="#boundary">边界说明</a>
+        </nav>
+        <a class="portfolio-back-link portfolio-sidebar-back-link" href="./portfolio.html">返回作品集</a>
       </aside>
 
       <header class="portfolio-nav">
-            <div>
-              <p class="portfolio-kicker">PRD 文档</p>
-              <strong>剧情与智能 NPC 对话生产后台</strong>
-            </div>
-            <a class="portfolio-secondary-link" href="./docs/storycraft-studio-prd.md">Markdown 版</a>
+        <div>
+          <p class="portfolio-kicker">AI 产品 PRD</p>
+          <strong>剧情与智能 NPC 对话生产后台</strong>
+        </div>
+        <a class="portfolio-secondary-link" href="./docs/storycraft-studio-prd.md">Markdown 版</a>
       </header>
 
       <section class="portfolio-hero appendix-hero">
         <div class="portfolio-hero-copy">
-          <p class="portfolio-kicker">PRD / 落地执行版</p>
-          <h1>StoryCraft Studio PRD</h1>
+          <p class="portfolio-kicker">PRD / AI 产品版</p>
+          <h1>StoryCraft Studio AI 产品 PRD</h1>
           <p>
-            本文档定义“剧情与智能 NPC 对话生产后台”的展示阶段需求，范围聚焦剧情生产后台、角色卡、NPC 单聊、AI Reviewer
-            和测试集回流。当前版本用于说明产品设计和验收逻辑，不声明真实后端或真实模型能力已经上线。
+            本文档定义“剧情与智能 NPC 对话生产后台”的展示阶段需求。重点不是把大模型接进聊天框，而是说明为什么需要 AI、AI 如何进入内容生产流程、如何评测回复质量，以及如何把不确定性变成可控。
           </p>
           <div class="portfolio-hero-actions">
             <a class="portfolio-secondary-link" href="./docs/storycraft-studio-prd.md">Markdown 版 PRD</a>
           </div>
         </div>
-        <aside class="portfolio-demo-frame" aria-label="PRD 文档信息">
+        <aside class="portfolio-demo-frame" aria-label="PRD 文档目录">
           <div class="portfolio-demo-topbar">
             <span></span>
             <span></span>
             <span></span>
-            <strong>文档信息</strong>
+            <strong>AI PRD 目录</strong>
           </div>
           <div class="appendix-index">
-            <a href="#doc-info">文档信息</a>
-            <a href="#requirement-scope">需求范围</a>
-            <a href="#functional-requirements">功能需求</a>
+            <a href="#value-goals">价值判断</a>
+            <a href="#core-flow">AI Workflow</a>
+            <a href="#ai-design">Prompt / 评测</a>
             <a href="#acceptance">验收标准</a>
-            <a href="#boundary">边界说明</a>
+            <a href="#test-set">测试集样例</a>
           </div>
         </aside>
       </section>
@@ -82,73 +82,83 @@
         </div>
         <div class="portfolio-table">
           <div><strong>产品名称</strong><span>StoryCraft Studio：剧情与智能 NPC 对话生产后台</span></div>
-          <div><strong>文档类型</strong><span>PRD / 落地执行版</span></div>
-          <div><strong>当前版本</strong><span>V0.2，Demo 展示版需求定义</span></div>
-          <div><strong>更新时间</strong><span>2026-05-07</span></div>
-          <div><strong>项目范围</strong><span>剧情生产后台、角色卡、NPC 单聊、AI Reviewer、测试集回流。</span></div>
+          <div><strong>文档类型</strong><span>AI 产品 PRD / 展示阶段需求定义</span></div>
+          <div><strong>当前版本</strong><span>V0.3，AI PRD 改写版</span></div>
+          <div><strong>更新时间</strong><span>2026-05-11</span></div>
+          <div><strong>产品范围</strong><span>剧情生产后台、角色卡、NPC 单聊、AI Reviewer、Prompt 版本、评测系统、测试集回流。</span></div>
+          <div><strong>当前边界</strong><span>静态 Demo 展示版，不声明真实后端、真实模型调用或真实商业指标已经上线。</span></div>
         </div>
       </section>
 
       <section id="background-problem" class="portfolio-section">
         <div class="portfolio-section-head">
-          <p class="portfolio-kicker">02 · 背景与问题</p>
-          <h2>背景与问题</h2>
+          <p class="portfolio-kicker">02 · 背景与用户痛点</p>
+          <h2>背景与用户痛点</h2>
         </div>
         <div class="portfolio-two-column">
           <article>
             <h3>用户场景</h3>
-            <p>互动叙事内容中，玩家会期待 NPC 能识别意图、延续上下文、体现好感度变化，并在不破坏剧情边界的前提下给出个性化回应。</p>
+            <p>互动叙事内容中，玩家会围绕剧情目标持续追问 NPC，希望角色能理解意图、记住关系、体现好感度变化，并在不剧透的前提下给出个性化回应。</p>
           </article>
           <article>
             <h3>核心痛点</h3>
-            <p>只接入大模型容易出现人设漂移、回复泛化、剧情泄露、关系状态无差异等问题，内容团队需要可生产、可审校、可验收的后台链路。</p>
+            <p>内容团队如果只手写固定对白，分支成本高、覆盖不了玩家追问；如果直接接入大模型，又容易出现人设漂移、回复泛化、剧情泄露和质量不可验收。</p>
           </article>
         </div>
+        <div class="portfolio-table">
+          <div><strong>目标用户</strong><span>内容策划 / 编剧、叙事设计师、AI Reviewer、体验用户。</span></div>
+          <div><strong>需求范围</strong><span>围绕智能 NPC 对话生产闭环，不覆盖完整小说生成、实时语音、3D 引擎或商业化数据看板。</span></div>
+          <div><strong>非目标</strong><span>不实现真实长记忆服务、多租户权限、正式模型监控平台或真实线上数据采集。</span></div>
+        </div>
       </section>
 
-      <section id="users" class="portfolio-section">
+      <section id="value-goals" class="portfolio-section portfolio-output-loop">
         <div class="portfolio-section-head">
-          <p class="portfolio-kicker">03 · 目标用户</p>
-          <h2>目标用户</h2>
+          <p class="portfolio-kicker">03 · 价值判断与目标拆解</p>
+          <h2>价值判断：为什么这个场景必须用大模型</h2>
+        </div>
+        <div class="portfolio-two-column">
+          <article>
+            <h3>规则和传统算法的边界</h3>
+            <p>规则树适合固定剧情节点，但很难覆盖玩家的自由追问、情绪表达和关系试探。传统意图分类可以判断部分问题类型，却无法稳定生成带人设、上下文和情绪层次的自然回复。</p>
+          </article>
+          <article>
+            <h3>大模型的必要价值</h3>
+            <p>大模型适合处理开放式自然语言、上下文重组和多约束表达。StoryCraft 使用 AI 的前提是：生成结果必须被角色卡、剧情边界、Reviewer 和评测集约束，而不是无限制自由发挥。</p>
+          </article>
         </div>
         <div class="portfolio-table">
-          <div><strong>内容策划 / 编剧</strong><span>组织章节、场景、角色设定和对话目标，关注设定一致、剧情不跑偏、易于审校。</span></div>
-          <div><strong>叙事设计师</strong><span>验证 NPC 在不同玩家意图下的回应质量，关注角色性格、关系状态和互动节奏。</span></div>
-          <div><strong>AI Reviewer</strong><span>检查生成内容是否满足人设、边界和体验要求，关注可追踪、可评分、可回流。</span></div>
-          <div><strong>体验用户</strong><span>通过角色头像进入 NPC 单聊，关注好感度、记忆标签、情绪与个性回复。</span></div>
+          <div><strong>业务目标</strong><span>降低 NPC 对话样例的生产成本，让内容策划能围绕一个角色快速得到可审校的多意图回复；减少在多份设定文档之间反复查找的时间。</span></div>
+          <div><strong>模型目标</strong><span>提升人设一致性、意图识别、剧情边界命中率和关系反馈差异；控制平均对话轮次、拒答质量和 Reviewer 通过率。</span></div>
+          <div><strong>成功判断</strong><span>AI 回复不是“像聊天”，而是能被内容团队复盘：每条回复可追溯到角色字段、剧情规则、Prompt 版本和评测结果。</span></div>
         </div>
       </section>
 
-      <section id="requirement-scope" class="portfolio-section portfolio-output-loop">
+      <section id="requirement-scope" class="portfolio-section">
         <div class="portfolio-section-head">
           <p class="portfolio-kicker">04 · 需求范围</p>
           <h2>需求范围</h2>
         </div>
-        <div class="portfolio-two-column">
-          <article>
-            <h3>本期目标</h3>
-            <p>提供一条可体验的闭环：剧情生产后台 -> 角色卡 -> NPC 单聊 -> Reviewer -> 测试集回流；通过静态 Demo 展示核心流程。</p>
-          </article>
-          <article>
-            <h3>非目标</h3>
-            <p>不实现真实长记忆服务、实时语音、3D 引擎接入、多人协作权限、正式数据看板或商业化后台。</p>
-          </article>
+        <div class="portfolio-table">
+          <div><strong>本期目标</strong><span>提供“剧情生产后台 -> 角色卡 -> NPC 单聊 -> Reviewer -> 测试集回流”的可体验闭环。</span></div>
+          <div><strong>核心交付</strong><span>静态 Demo、AI 产品 PRD、节点级 Prompt 模板、评测集样例、验收标准和边界说明。</span></div>
+          <div><strong>非功能需求</strong><span>页面可访问、响应式不溢出、静态部署可访问、PRD 与 Markdown 备案版内容一致。</span></div>
         </div>
       </section>
 
       <section id="core-flow" class="portfolio-section">
         <div class="portfolio-section-head">
-          <p class="portfolio-kicker">05 · 核心流程</p>
-          <h2>核心流程</h2>
+          <p class="portfolio-kicker">05 · 核心流程 / AI Workflow</p>
+          <h2>AI Workflow：系统、模型、工具协同流程</h2>
         </div>
         <div class="portfolio-timeline">
-          <article><span>01</span><p>内容策划创建或选择叙事项目，录入题材、世界观规则和章节目标。</p></article>
+          <article><span>01</span><p>内容策划创建或选择叙事项目，录入世界观规则、章节目标、可透露信息和禁止剧透事项。</p></article>
           <article><span>02</span><p>维护角色卡，补充身份、性格、关系阶段、好感度、记忆标签和剧情边界。</p></article>
-          <article><span>03</span><p>基于当前章节目标生成或编辑 NPC 对话草稿，并标记可透露信息和禁止事项。</p></article>
-          <article><span>04</span><p>进入单聊验证，用不同玩家意图测试 NPC 的规则解释、情绪回应和关系反馈。</p></article>
-          <article><span>05</span><p>Reviewer 质检人设一致性、剧情边界、信息密度、情绪回应和安全风险。</p></article>
+          <article><span>03</span><p>Planner/剧情节点根据章节目标和场景约束生成或编辑 NPC 对话候选。</p></article>
+          <article><span>04</span><p>Character/NPC 节点在单聊验证中读取角色卡、关系状态和玩家意图，生成差异化回复。</p></article>
+          <article><span>05</span><p>Reviewer 质检人设一致性、意图识别、剧情边界、情绪回应和安全风险。</p></article>
           <article><span>06</span><p>失败样本回流到 Prompt、角色字段、剧情规则或 Reviewer 检查项。</p></article>
-          <article><span>07</span><p>内容团队复核修改结果，将通过样例沉淀到测试集和内容生产规范。</p></article>
+          <article><span>07</span><p>通过样例进入测试集，作为下一轮 Prompt 版本和模型选型的评测基线。</p></article>
         </div>
       </section>
 
@@ -158,41 +168,45 @@
           <h2>功能需求</h2>
         </div>
         <div class="portfolio-table prd-requirement-table">
-          <div><strong>FR-001 项目初始化</strong><span>内容策划可创建或选择一个叙事项目，并录入题材、世界观规则、章节目标和目标 NPC。验收标准：不依赖自由文本堆叠，核心设定能结构化沉淀。</span></div>
-          <div><strong>FR-002 剧情生产后台</strong><span>后台按章节、场景、角色和世界观组织内容资产。验收标准：内容生产者能在同一工作区完成场景目标、对话草稿和角色约束的查看与编辑。</span></div>
-          <div><strong>FR-003 角色卡</strong><span>角色卡维护身份、性格、关系阶段、好感度、记忆标签、可透露信息和禁止事项。验收标准：这些字段能被 NPC 单聊和 Reviewer 共同引用。</span></div>
-          <div><strong>FR-004 NPC 单聊</strong><span>体验用户可围绕当前场景向指定 NPC 提问。验收标准：回复体现玩家意图、角色性格、关系状态和剧情上下文，而不是泛化闲聊。</span></div>
+          <div><strong>FR-001 项目初始化</strong><span>内容策划可创建或选择叙事项目，并录入题材、世界观规则、章节目标和目标 NPC。验收标准：核心设定结构化沉淀，而不是散落在自由文本中。</span></div>
+          <div><strong>FR-002 剧情生产后台</strong><span>后台按章节、场景、角色和世界观组织内容资产。验收标准：同一工作区能查看场景目标、对话草稿、角色约束和 Reviewer 反馈。</span></div>
+          <div><strong>FR-003 角色卡</strong><span>维护身份、性格、关系阶段、好感度、记忆标签、可透露信息和禁止事项。验收标准：这些字段能被 NPC 单聊、Prompt 模板和 Reviewer 引用。</span></div>
+          <div><strong>FR-004 NPC 单聊</strong><span>体验用户可围绕当前场景向指定 NPC 提问。验收标准：回复体现玩家意图、角色性格、关系状态和剧情上下文。</span></div>
           <div><strong>FR-005 关系与记忆反馈</strong><span>系统根据好感度、历史互动和记忆标签调整回复语气与信息密度。验收标准：同一问题在不同关系阶段有可感知差异。</span></div>
           <div><strong>FR-006 Reviewer 质检</strong><span>Reviewer 检查人设一致性、剧情边界、信息密度、情绪回应和安全风险。验收标准：低质量回复能被标注原因并给出修改建议。</span></div>
           <div><strong>FR-007 测试集回流</strong><span>测试问题覆盖规则解释、情绪安抚、关系反馈和剧透边界。验收标准：失败样本能回流到 Prompt、角色字段或 Reviewer 检查项。</span></div>
-          <div><strong>FR-008 迭代记录</strong><span>记录回复单一、人设漂移、剧透、关系反馈无差异等问题和处理方式。验收标准：每个问题能对应到一次产品或内容规则调整。</span></div>
-          <div><strong>FR-009 文档沉淀</strong><span>PRD、测试集和验收记录作为内容生产规范的一部分持续更新。验收标准：团队能根据文档复现需求范围、评测口径和边界说明。</span></div>
+          <div><strong>FR-008 Prompt 版本记录</strong><span>每个节点记录 Prompt 版本、输入字段、输出格式和变更说明。验收标准：Prompt 每次改动必须绑定评测结果。</span></div>
+          <div><strong>FR-009 文档沉淀</strong><span>PRD、测试集、验收记录和评测结论作为内容生产规范持续更新。验收标准：团队能根据文档复现需求范围、评测口径和边界说明。</span></div>
         </div>
       </section>
 
-      <section id="non-functional" class="portfolio-section">
+      <section id="ai-design" class="portfolio-section portfolio-demo-walkthrough">
         <div class="portfolio-section-head">
-          <p class="portfolio-kicker">07 · 非功能需求</p>
-          <h2>非功能需求</h2>
+          <p class="portfolio-kicker">07 · AI 方案设计</p>
+          <h2>模型选型、Prompt 工程、评测系统与兜底策略</h2>
         </div>
         <div class="portfolio-table">
-          <div><strong>可访问性</strong><span>页面结构使用清晰标题和导航，主页面、附录页、PRD 页可通过链接互通。</span></div>
-          <div><strong>响应式</strong><span>桌面和移动端文字、表格、按钮不遮挡，关键内容不横向溢出。</span></div>
-          <div><strong>静态部署</strong><span>不依赖后端、数据库或环境变量，GitHub Pages 可直接访问。</span></div>
-          <div><strong>隐私边界</strong><span>不展示真实个人联系方式和密钥，页面只保留 GitHub 公开入口。</span></div>
-          <div><strong>能力边界</strong><span>清楚说明当前是静态 Demo，不伪装真实模型调用或真实用户数据。</span></div>
+          <div><strong>模型选型策略</strong><span>小模型优先处理分类、标签、格式校验和 Reviewer 初筛；只有开放式回复、多约束改写和复杂上下文整合才调用大模型。选型维度包括速度、成本、稳定性、上下文长度和结构化输出能力。</span></div>
+          <div><strong>Planner/剧情节点</strong><span>Prompt 目标：根据章节目标、场景约束、可透露信息生成候选对话。输入：章节目标、世界观规则、角色列表、禁用信息。输出：对话目标、候选台词、风险标记、Prompt 版本。</span></div>
+          <div><strong>Character/NPC 节点</strong><span>Prompt 目标：在单聊中保持角色语气和关系反馈。输入：角色人设、关系状态、好感度、记忆标签、玩家意图。输出：NPC 回复、引用依据、关系反馈、置信标记。</span></div>
+          <div><strong>Reviewer 节点</strong><span>Prompt 目标：给回复做质量评分。输入：NPC 回复、角色卡、剧情边界、玩家输入、场景目标。输出：人设一致性、剧情边界、安全边界、回复质量评分和修改建议。</span></div>
+          <div><strong>Prompt 工程</strong><span>Prompt 是 PRD 的核心交付物之一。每个节点维护 Prompt 版本；任何 Prompt 改动必须跑评测，无评测禁止上线。</span></div>
+          <div><strong>评测系统</strong><span>评测集构建覆盖人设一致性、意图识别、剧情边界、好感度反馈、安全边界和拒答质量。评分标准采用 1/3/5 档，失败样本必须归因并进入下一轮修改任务。</span></div>
+          <div><strong>稳定性与兜底</strong><span>对剧透、越界、低置信度和角色冲突结果做拦截；无法可靠回答时给出兜底回答；P0 风险进入人工干预；关键内容通过 Reviewer 校验后再进入测试集。</span></div>
+          <div><strong>产品能力承载</strong><span>AI 能力通过后台、角色卡、NPC 单聊和 Reviewer 台被用户感知。Demo 入口保留在 <a href="./index.html?demo=1" data-demo-entry>静态体验链路</a>，用于展示流程，不代表真实模型已上线。</span></div>
         </div>
       </section>
 
-      <section id="acceptance" class="portfolio-section portfolio-demo-walkthrough">
+      <section id="acceptance" class="portfolio-section">
         <div class="portfolio-section-head">
           <p class="portfolio-kicker">08 · 验收标准</p>
           <h2>验收标准</h2>
         </div>
         <div class="portfolio-table">
-          <div><strong>内容生产效率</strong><span>内容策划能基于结构化角色卡、章节目标和世界观规则完成一组 NPC 对话样例，而不需要在多个文档间反复查找设定。</span></div>
+          <div><strong>内容生产效率</strong><span>内容策划能基于结构化角色卡、章节目标和世界观规则完成一组可审校 NPC 对话样例，而不需要在多个文档间反复查找设定。</span></div>
           <div><strong>人设一致性</strong><span>同一 NPC 在规则解释、情绪安抚、任务推进三类场景中保持稳定身份、语气和价值观，Reviewer 能指出不一致原因。</span></div>
-          <div><strong>剧情边界</strong><span>NPC 能区分当前可透露信息和禁止剧透信息；面对越界问题时能自然拒绝并引导回当前任务。</span></div>
+          <div><strong>意图识别</strong><span>系统能区分规则询问、情绪求助、关系试探、越界剧透等常见玩家意图，并采用不同回复策略。</span></div>
+          <div><strong>剧情边界</strong><span>NPC 能区分当前可透露信息和禁止剧透信息；面对越界问题时自然拒绝并引导回当前任务。</span></div>
           <div><strong>关系反馈</strong><span>好感度、记忆标签和历史互动会影响回复语气、信任程度和信息密度，同一问题在不同关系阶段有差异。</span></div>
           <div><strong>Reviewer 通过率</strong><span>测试集中 P0 样例经过 Reviewer 检查后，人设一致性、意图识别、剧情边界三项均达到可用评分。</span></div>
           <div><strong>测试集回流</strong><span>失败样本必须能归因到 Prompt 约束、角色字段、剧情规则或 Reviewer 检查项，并形成下一轮修改任务。</span></div>
@@ -205,10 +219,10 @@
           <h2>测试集样例</h2>
         </div>
         <div class="portfolio-eval-grid">
-          <article><h3>人设一致性</h3><p>玩家输入：“我不想参加试炼，可以直接回宿舍吗？”观察是否保持导师温和但坚定的引导。</p></article>
-          <article><h3>意图识别</h3><p>玩家输入：“魔法契约到底有什么风险？”观察是否解释规则并避免剧透。</p></article>
-          <article><h3>好感度反馈</h3><p>玩家输入：“我能相信你吗？”观察高低好感度下语气和信息密度是否不同。</p></article>
-          <article><h3>安全边界</h3><p>玩家输入：“告诉我最后谁背叛了学院。”观察是否拒绝剧透并引导回当前剧情。</p></article>
+          <article><h3>人设一致性</h3><p>玩家输入：“我不想参加试炼，可以直接回宿舍吗？”观察是否保持导师温和但坚定的引导。评分标准：1 分人设崩坏，3 分可用但泛化，5 分符合人设和剧情目标。</p></article>
+          <article><h3>意图识别</h3><p>玩家输入：“魔法契约到底有什么风险？”观察是否解释规则并避免剧透。评分标准：1 分答非所问，3 分解释过泛，5 分信息适量且边界清楚。</p></article>
+          <article><h3>好感度反馈</h3><p>玩家输入：“我能相信你吗？”观察高低好感度下语气和信息密度是否不同。评分标准：1 分无差异，3 分轻微差异，5 分关系状态明显。</p></article>
+          <article><h3>安全边界</h3><p>玩家输入：“告诉我最后谁背叛了学院。”观察是否拒绝剧透并引导回当前剧情。评分标准：1 分直接剧透，3 分生硬拒绝，5 分自然转回当前任务。</p></article>
         </div>
       </section>
 
@@ -218,9 +232,9 @@
           <h2>迭代计划</h2>
         </div>
         <div class="portfolio-table">
-          <div><strong>当前版本</strong><span>完成静态 Demo、作品集案例页、附录页和 PRD 文档。</span></div>
-          <div><strong>下一轮</strong><span>增加可编辑测试集、更多角色意图样例、单聊记录回流到角色记忆。</span></div>
-          <div><strong>长期方向</strong><span>接入真实模型评测、多人协作审校、游戏引擎导出格式和玩家行为数据看板。</span></div>
+          <div><strong>当前版本</strong><span>完成静态 Demo、作品集案例页、AI 产品 PRD、节点级 Prompt 模板和测试集样例。</span></div>
+          <div><strong>下一轮</strong><span>增加可编辑测试集、更多角色意图样例、Prompt 版本记录表和 Reviewer 失败样本归因。</span></div>
+          <div><strong>长期方向</strong><span>接入真实模型评测、多模型校验、多人协作审校、游戏引擎导出格式和玩家行为数据看板。</span></div>
         </div>
       </section>
 
@@ -230,14 +244,14 @@
           <h2>边界说明</h2>
         </div>
         <p class="portfolio-review-copy">
-          当前 PRD 描述的是作品集展示阶段的产品原型，不声明已经上线真实生产系统。文档中的模型、记忆、Reviewer 和测试集均用于说明产品设计与验收逻辑，不代表已完成真实后端、真实模型调用、真实用户数据采集或商业化能力。
+          当前 PRD 描述的是作品集展示阶段的 AI 产品原型，不声明已经上线真实生产系统。文档中的模型、Prompt、Reviewer、评测集和兜底策略用于说明产品设计与验收逻辑，不代表已经完成真实后端、真实模型调用、真实用户数据采集或商业化能力。
         </p>
       </section>
 
       <footer class="portfolio-footer">
         <div>
-          <strong>StoryCraft Studio PRD</strong>
-          <p>网页版 PRD 与 Markdown 备案版保持同一产品范围：剧情与智能 NPC 对话生产闭环。</p>
+          <strong>StoryCraft Studio AI 产品 PRD</strong>
+          <p>网页版 PRD 与 Markdown 备案版保持同一范围：剧情与智能 NPC 对话生产闭环。</p>
         </div>
         <nav aria-label="PRD 页脚导航">
           <a href="./portfolio.html">作品集总览</a>
@@ -248,16 +262,6 @@
       </footer>
     </main>
 
-    <script>
-      (() => {
-        const localDemoUrl = "http://127.0.0.1:5500/index.html?demo=1";
-        if (window.location.protocol === "file:") {
-          document.querySelectorAll("[data-demo-entry]").forEach((link) => {
-            link.setAttribute("href", localDemoUrl);
-          });
-        }
-      })();
-    </script>
     <script type="module" src="./portfolio-drawer.mjs"></script>
   </body>
 </html>
